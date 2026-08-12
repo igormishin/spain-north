@@ -231,8 +231,31 @@ body { padding-top: calc(var(--tabs) + env(safe-area-inset-top, 0px)); }
 .opt {
   background: var(--paper);
   padding: 18px 18px 16px;
+  overflow: hidden;
 }
 .opt.pick { box-shadow: inset 3px 0 0 var(--pin); }
+.opt-photos {
+  display: grid;
+  gap: 3px;
+  height: 176px;
+  margin: -18px -18px 14px;
+  background: var(--line);
+}
+.opt-photos.n1 { grid-template-columns: 1fr; }
+.opt-photos.n2 { grid-template-columns: 1.15fr 1fr; }
+.opt-photos.n3 {
+  grid-template-columns: 1.35fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 220px;
+}
+.opt-photos.n3 img:first-child { grid-row: 1 / span 2; }
+.opt-photos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #cfc3ad;
+}
 .opt h3 {
   font-family: Fraunces, serif;
   font-size: 22px;
@@ -294,15 +317,59 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   max-width: 72ch;
   margin: -0.4em 0 1.8em;
 }
+.ov-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-bottom: 1.4em;
+}
+.ov-place {
+  background: var(--paper);
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+.ov-place img {
+  width: 100%;
+  height: 168px;
+  object-fit: cover;
+  display: block;
+  background: #cfc3ad;
+}
+.ov-place .ov-body { padding: 12px 14px 14px; }
+.ov-place h3 {
+  font-family: Fraunces, serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 4px 0 6px;
+}
+.ov-place p { font-size: 13px; color: var(--muted); }
+.ov-more {
+  font-size: 13px;
+  margin: -0.6em 0 2em;
+}
+.ov-more a { color: var(--ink); }
+.ov-win {
+  font-family: Fraunces, serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0.4em 0 0.6em;
+}
+@media (max-width: 1100px) {
+  .ov-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 800px) {
-  .stay-grid { grid-template-columns: 1fr; }
+  .stay-grid, .ov-grid { grid-template-columns: 1fr; }
+  .ov-place img { height: 200px; }
   .tabs { padding-left: 8px; padding-right: 8px; }
   .tab {
     flex: 1;
     text-align: center;
-    padding: 12px 6px 10px;
-    letter-spacing: 0.04em;
-    font-size: 12px;
+    padding: 12px 4px 10px;
+    letter-spacing: 0.02em;
+    font-size: 11px;
   }
   .tab .long { display: none; }
   .tab .short { display: inline; }
@@ -323,6 +390,8 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   .stay-h { font-size: 22px; }
   .stay-lead { font-size: 16px; }
   .opt { padding: 16px; }
+  .opt-photos { margin: -16px -16px 12px; height: 200px; }
+  .opt-photos.n3 { height: 240px; }
   .opt h3 { font-size: 20px; }
   .opt .price { font-size: 24px; }
   .table-wrap {
@@ -342,11 +411,147 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
 </head>
 <body>
 <nav class="tabs" role="tablist">
-  <a href="#places" class="tab is-on" id="tab-places" role="tab" aria-selected="true">Места</a>
+  <a href="#overview" class="tab is-on" id="tab-overview" role="tab" aria-selected="true">Обзор</a>
+  <a href="#places" class="tab" id="tab-places" role="tab" aria-selected="false">Места</a>
   <a href="#stay" class="tab" id="tab-stay" role="tab" aria-selected="false"><span class="long">Автодом и жильё</span><span class="short">Жильё</span></a>
   <a href="#fly" class="tab" id="tab-fly" role="tab" aria-selected="false"><span class="long">Как добраться</span><span class="short">Перелёт</span></a>
 </nav>
-<div id="panel-places" class="panel is-on" role="tabpanel">
+<div id="panel-overview" class="panel is-on" role="tabpanel">
+<header class="cover stay-cover">
+  <div>
+    <p class="kicker">Испания Север · обзор</p>
+    <h1>Неделя на <em>зелёном берегу</em></h1>
+    <p class="lede">Окно A, Бильбао. 2 взрослых + ребёнок ~2 лет. 7–9 дней. Срез 12 августа 2026.</p>
+  </div>
+  <p class="kicker">не весь берег · база у Zarautz</p>
+</header>
+
+<section class="stay">
+  <p class="stay-lead">Одно окно, не Галисия–Баски целиком. База Zarautz / Donostia. Из каталога на неделю: 2 сёрф-якоря, flysch + Gaztelugatxe, Concha с ребёнком.</p>
+
+  <h2 class="stay-h">Хайлайты · окно A</h2>
+  <p class="stay-note">P1 своего окна, не все P1 берега. Карточка ведёт в полный каталог.</p>
+  <div class="ov-grid">
+    <a class="ov-place" href="#zarautz">
+      <img src="photos/zarautz/1.jpg" alt="Zarautz">
+      <div class="ov-body">
+        <p class="meta"><span class="p">P1</span> Сёрф · якорь</p>
+        <h3>Zarautz</h3>
+        <p>2,5 км песка, максимум проката на берегу. Лучший семейный якорь басков.</p>
+      </div>
+    </a>
+    <a class="ov-place" href="#getaria">
+      <img src="photos/getaria/1.jpg" alt="Getaria">
+      <div class="ov-body">
+        <p class="meta"><span class="p">P1</span> Город · 2 ч</p>
+        <h3>Getaria</h3>
+        <p>Мыс, гриль, txakoli. 10 мин от Zarautz. Лучший маленький город басков.</p>
+      </div>
+    </a>
+    <a class="ov-place" href="#flysch">
+      <img src="photos/flysch/1.jpg" alt="Flysch Zumaia">
+      <div class="ov-body">
+        <p class="meta"><span class="p">P1</span> Природа · отлив</p>
+        <h3>Flysch Zumaia</h3>
+        <p>Слои скал на Itzurun. Только пляж, не трек Zumaia–Deba. Getaria рядом.</p>
+      </div>
+    </a>
+    <a class="ov-place" href="#gaztelugatxe">
+      <img src="photos/gaztelugatxe/1.jpg" alt="San Juan de Gaztelugatxe">
+      <div class="ov-body">
+        <p class="meta"><span class="p">P1</span> Природа · смотровая</p>
+        <h3>Gaztelugatxe</h3>
+        <p>Скала и мост. С ребёнком — вид с парковки. Полный спуск только в переноске.</p>
+      </div>
+    </a>
+    <a class="ov-place" href="#concha">
+      <img src="photos/concha/1.jpg" alt="Playa de La Concha">
+      <div class="ov-body">
+        <p class="meta"><span class="p">P1</span> Donostia · ребёнок</p>
+        <h3>La Concha</h3>
+        <p>Самый спокойный заход в воду у басков. Город вокруг — база, не галочка.</p>
+      </div>
+    </a>
+    <a class="ov-place" href="#somo">
+      <img src="photos/somo/1.jpg" alt="Somo">
+      <div class="ov-body">
+        <p class="meta"><span class="p">P1</span> Сёрф · мягкий</p>
+        <h3>Somo</h3>
+        <p>Самый мягкий спот берега. Если ближе к BIO — Sopelana, не оба в один день.</p>
+      </div>
+    </a>
+  </div>
+  <p class="ov-more"><a href="#places">Все 50 мест →</a></p>
+
+  <h2 class="stay-h">Автодом</h2>
+  <p class="stay-note">Roadsurfer Zamudio, 10 мин от BIO. Берём и сдаём в Бильбао. Срез 5–12 сен, 7 ночей.</p>
+  <div class="stay-grid">
+    <article class="opt pick">
+      <div class="opt-photos n2">
+        <img src="photos/stay/finca/1.jpg" alt="Family Finca" loading="lazy">
+        <img src="photos/stay/finca/3.jpg" alt="Family Finca, салон" loading="lazy">
+      </div>
+      <p class="meta"><span class="p">брать</span> душ + WC</p>
+      <h3>Family Finca</h3>
+      <p class="price">€888 <span>/ неделя</span></p>
+      <p>6.0 × 3.1 м. Тёплый душ и туалет. 2 спальных зоны, 2 Isofix. Кухня и стулья в цене.</p>
+      <p class="note">Разница с компактом без туалета — €115. В Getaria не лезть, оставлять на въезде. Итого с кемпингом ~€1 200–1 450.</p>
+    </article>
+    <article class="opt">
+      <div class="opt-photos n2">
+        <img src="photos/stay/jesuskoa/0.jpg" alt="Jesuskoa" loading="lazy">
+        <img src="photos/stay/jesuskoa/1.jpg" alt="Jesuskoa Aritza" loading="lazy">
+      </div>
+      <p class="meta">если не автодом</p>
+      <h3>Машина + Jesuskoa</h3>
+      <p class="price">€160 <span>/ ночь · €1 120 / неделя</span></p>
+      <p>Oikia, 3 км Zumaia. Первый этаж, 2 спальни, кроватка, кухня, сад. Плюс машина BIO ~€250–400.</p>
+      <p class="note">Итого ~€1 450–1 650. Тише, чем променад Zarautz. С двухлеткой это рабочая альтернатива.</p>
+    </article>
+  </div>
+  <p class="ov-more"><a href="#stay">Сравнение схем и дома →</a></p>
+
+  <h2 class="stay-h">Перелёты · два окна</h2>
+  <p class="stay-note">Хаб Таллин, ночь накануне. 1 взрослый эконом, срез 12 авг 2026. Поезд MAD ~€35–55 сверху. Рига в план не кладём.</p>
+  <h2 class="ov-win">3–6 сен → 13–15 сен</h2>
+  <div class="stay-grid">
+    <article class="opt pick">
+      <p class="meta"><span class="p">пара</span> MAD + поезд</p>
+      <h3>TLL → MAD утром</h3>
+      <p class="price">17.7–21.6k ₽ <span>туда</span></p>
+      <p>Чт 3 сен 17 729 ₽ или пт 4 сен 21 558 ₽. TLL 08:55 → MAD 14:35, WAW 1 ч. Поезд в тот же день.</p>
+      <p>Обратно: MAD 13:05 → TLL 19:55. Вс 13 сен 25 953 ₽ или вт 15 сен 22 992 ₽.</p>
+    </article>
+    <article class="opt pick">
+      <p class="meta"><span class="p">пара</span> сразу BIO</p>
+      <h3>RT Бильбао 4–14 сен</h3>
+      <p class="price">51 692 ₽ <span>оба конца</span></p>
+      <p>Туда пт 4 сен TLL 14:05 → BIO 22:45, AMS 5 ч. Поздно, но сразу Баски.</p>
+      <p>Обратно пн 14 сен BIO 12:00 → TLL 19:55. Лучшее время с BIO.</p>
+    </article>
+  </div>
+  <h2 class="ov-win">10–13 сен → 20–22 сен</h2>
+  <div class="stay-grid">
+    <article class="opt pick">
+      <p class="meta"><span class="p">пара</span> MAD + поезд</p>
+      <h3>Чт 10 сен → MAD</h3>
+      <p class="price">22 887 ₽ <span>туда</span></p>
+      <p>TLL 08:55 → MAD 14:35, WAW 1 ч. Поезд в тот же день.</p>
+      <p>Обратно вт 22 сен MAD 13:05 → TLL 19:55, 22 992 ₽.</p>
+    </article>
+    <article class="opt pick">
+      <p class="meta"><span class="p">пара</span> сразу BIO</p>
+      <h3>Пт 11 сен → BIO</h3>
+      <p class="price">27 260 ₽ <span>туда</span></p>
+      <p>TLL 14:05 → BIO 22:45, AMS 5 ч. Сразу Баски, поздно.</p>
+      <p>Обратно вт 22 сен BIO 12:00 → TLL 19:55, 27 091 ₽.</p>
+    </article>
+  </div>
+  <p class="ov-more"><a href="#fly">Все рейсы и Рига →</a></p>
+</section>
+<footer class="foot">Срез 12 авг 2026. Окно A из каталога мест. Family Finca — CamperDays Bilbao RT 5–12 сен. Рейсы — Авиасейлс / Google Flights, 1 взрослый.</footer>
+</div>
+<div id="panel-places" class="panel" role="tabpanel" hidden>
 
 <header class="cover">
   <div>
@@ -671,7 +876,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     <p class="meta"><span class="p">P3</span> Другое · Астурия · 45 мин</p>
     <h2>La Cuevona</h2>
   </header>
-  <div class="photos n1"><img src="photos/cuevona/1.jpg" alt="La Cuevona" loading="lazy"></div>
+  <div class="photos n4"><img src="photos/cuevona/1.jpg" alt="La Cuevona" loading="lazy"><img src="photos/cuevona/2.jpg" alt="La Cuevona" loading="lazy"><img src="photos/cuevona/3.jpg" alt="La Cuevona" loading="lazy"><img src="photos/cuevona/4.jpg" alt="La Cuevona" loading="lazy"></div>
   <div class="copy">
     <p class="what">Дорога в деревню Cuevas del Agua идёт через огромную пещеру.</p>
     <p><b>Что делать.</b> Проехать, остановиться, выйти. Рядом Ribadesella.</p>
@@ -722,7 +927,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     <p class="meta"><span class="p">P2</span> Природа · Астурия · 30–45 мин</p>
     <h2>Gulpiyuri</h2>
   </header>
-  <div class="photos n1"><img src="photos/gulpiyuri/1.jpg" alt="Gulpiyuri" loading="lazy"></div>
+  <div class="photos n4"><img src="photos/gulpiyuri/1.jpg" alt="Gulpiyuri" loading="lazy"><img src="photos/gulpiyuri/2.jpg" alt="Gulpiyuri" loading="lazy"><img src="photos/gulpiyuri/3.jpg" alt="Gulpiyuri" loading="lazy"><img src="photos/gulpiyuri/4.jpg" alt="Gulpiyuri" loading="lazy"></div>
   <div class="copy">
     <p class="what">Крошечный пляж в воронке в 100 м от моря: вода приходит под землёй.</p>
     <p><b>Что делать.</b> Дойти, посмотреть, уйти. Купаться особо негде.</p>
@@ -926,7 +1131,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     <p class="meta"><span class="p">P2</span> Природа · Кантабрия · 1,5–2 ч</p>
     <h2>Dunas de Liencres</h2>
   </header>
-  <div class="photos n1"><img src="photos/liencres/1.jpg" alt="Dunas de Liencres" loading="lazy"></div>
+  <div class="photos n4"><img src="photos/liencres/1.jpg" alt="Dunas de Liencres" loading="lazy"><img src="photos/liencres/2.jpg" alt="Dunas de Liencres" loading="lazy"><img src="photos/liencres/3.jpg" alt="Dunas de Liencres" loading="lazy"><img src="photos/liencres/4.jpg" alt="Dunas de Liencres" loading="lazy"></div>
   <div class="copy">
     <p class="what">Самые большие дюны кантабрийского берега, сосны, длинный пляж.</p>
     <p><b>Что делать.</b> Прогулка по дощатым настилам и дюнам. Можно совместить с Somo в один береговой день.</p>
@@ -994,7 +1199,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     <p class="meta"><span class="p">P1</span> Сёрф · Баски · 3–4 ч</p>
     <h2>Sopelana</h2>
   </header>
-  <div class="photos n1"><img src="photos/sopelana/1.jpg" alt="Sopelana" loading="lazy"></div>
+  <div class="photos n2"><img src="photos/sopelana/1.jpg" alt="Sopelana" loading="lazy"><img src="photos/sopelana/2.jpg" alt="Sopelana" loading="lazy"></div>
   <div class="copy">
     <p class="what">Рабочая лошадка баскского берега у Бильбао. Несколько пиков: Arrietara, La Salvaje.</p>
     <p><b>Что делать.</b> Школы и прокат на пляже. Близко к BIO — первая или последняя сессия поездки.</p>
@@ -1045,7 +1250,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     <p class="meta"><span class="p">P2</span> Другое · Баски · 1 ч</p>
     <h2>Mundaka (смотреть)</h2>
   </header>
-  <div class="photos n2"><img src="photos/mundaka/1.jpg" alt="Mundaka (смотреть)" loading="lazy"><img src="photos/mundaka/2.jpg" alt="Mundaka (смотреть)" loading="lazy"></div>
+  <div class="photos n4"><img src="photos/mundaka/1.jpg" alt="Mundaka (смотреть)" loading="lazy"><img src="photos/mundaka/2.jpg" alt="Mundaka (смотреть)" loading="lazy"><img src="photos/mundaka/3.jpg" alt="Mundaka (смотреть)" loading="lazy"><img src="photos/mundaka/4.jpg" alt="Mundaka (смотреть)" loading="lazy"></div>
   <div class="copy">
     <p class="what">Знаменитый левый в устье. Для среднего уровня в воду не лезть: труба, локалы, риф/канал.</p>
     <p><b>Что делать.</b> Порт, вид на волну, кофе. Рядом Gaztelugatxe.</p>
@@ -1231,6 +1436,11 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   <p class="stay-note">Живые цены CamperDays, сб 5 – сб 12 сен, 7 ночей, без постели и кресла. Автомат, безлимит км.</p>
   <div class="stay-grid">
     <article class="opt">
+      <div class="opt-photos n3">
+        <img src="photos/stay/cabin/1.jpg" alt="Camper Cabin" loading="lazy">
+        <img src="photos/stay/cabin/2.jpg" alt="Camper Cabin, спереди" loading="lazy">
+        <img src="photos/stay/cabin/3.jpg" alt="Camper Cabin, кухня" loading="lazy">
+      </div>
       <p class="meta"><span class="p">компакт</span> без туалета</p>
       <h3>Camper Cabin</h3>
       <p class="price">€773 <span>/ неделя</span></p>
@@ -1238,6 +1448,11 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
       <p class="note">Запасной. С двухлеткой ночью только кемпинг.</p>
     </article>
     <article class="opt pick">
+      <div class="opt-photos n3">
+        <img src="photos/stay/finca/1.jpg" alt="Family Finca" loading="lazy">
+        <img src="photos/stay/finca/2.jpg" alt="Family Finca, кровать" loading="lazy">
+        <img src="photos/stay/finca/3.jpg" alt="Family Finca, салон" loading="lazy">
+      </div>
       <p class="meta"><span class="p">брать</span> душ + WC</p>
       <h3>Family Finca</h3>
       <p class="price">€888 <span>/ неделя</span></p>
@@ -1245,12 +1460,19 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
       <p class="note">Разница с компактом €115. В Getaria не лезть — оставлять на въезде.</p>
     </article>
     <article class="opt">
+      <div class="opt-photos n2">
+        <img src="photos/stay/roadhouse/2.jpg" alt="Road House" loading="lazy">
+        <img src="photos/stay/roadhouse/3.jpg" alt="Road House, салон" loading="lazy">
+      </div>
       <p class="meta">душ + WC</p>
       <h3>Road House</h3>
       <p class="price">€922 <span>/ неделя</span></p>
       <p>5.4 × 2.8 м. Короче Finca, pop-top, 1 Isofix.</p>
     </article>
     <article class="opt">
+      <div class="opt-photos n1">
+        <img src="photos/stay/castle/1.jpg" alt="Camper Castle" loading="lazy">
+      </div>
       <p class="meta">душ + WC</p>
       <h3>Camper Castle</h3>
       <p class="price">€984 <span>/ неделя</span></p>
@@ -1263,6 +1485,11 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   <p class="stay-note">Mahasti €200 и Urain €210+ — дорого. Рабочий диапазон €85–160. Сентябрь у Jesuskoa — высокий сезон целиком, обе недели одна цена.</p>
   <div class="stay-grid">
     <article class="opt pick">
+      <div class="opt-photos n3">
+        <img src="photos/stay/jesuskoa/0.jpg" alt="Jesuskoa" loading="lazy">
+        <img src="photos/stay/jesuskoa/1.jpg" alt="Jesuskoa Aritza" loading="lazy">
+        <img src="photos/stay/jesuskoa/3.jpg" alt="Jesuskoa Pagoa" loading="lazy">
+      </div>
       <p class="meta"><span class="p">якорь</span> planta baja</p>
       <h3>Jesuskoa Aritza / Pagoa</h3>
       <p class="price">€160 <span>/ ночь · €1 120 / неделя</span></p>
@@ -1270,18 +1497,30 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
       <p class="note">Июль–август забиты. <a href="https://jesuskoa.net">jesuskoa.net</a></p>
     </article>
     <article class="opt">
+      <div class="opt-photos n3">
+        <img src="photos/stay/maddiola/1.jpg" alt="Maddiola Apart" loading="lazy">
+        <img src="photos/stay/maddiola/2.jpg" alt="Maddiola, спальня" loading="lazy">
+        <img src="photos/stay/maddiola/3.jpg" alt="Maddiola, вход" loading="lazy">
+      </div>
       <p class="meta">planta baja</p>
       <h3>Maddiola Apart</h3>
       <p class="price">€110–140 <span>/ ночь · €770–980</span></p>
       <p>Orio. 10 мин Zarautz. 1 спальня + диван, кухня, сад, животные. From €85, на сентябрь выше.</p>
     </article>
     <article class="opt">
+      <div class="opt-photos n1">
+        <img src="photos/stay/zelaietaberri/1.jpg" alt="Zelaietaberri" loading="lazy">
+      </div>
       <p class="meta">accessible</p>
       <h3>Zelaietaberri</h3>
       <p class="price">from €135 <span>/ ночь · €945</span></p>
       <p>Itziar–Deba, отшиб у flysch. Дом целиком, 2 спальни, сад. Zarautz ~25 мин.</p>
     </article>
     <article class="opt">
+      <div class="opt-photos n2">
+        <img src="photos/stay/zelaieta/1.jpg" alt="Zelaieta Mutriku" loading="lazy">
+        <img src="photos/stay/zelaieta/3.jpg" alt="Zelaieta, спальня" loading="lazy">
+      </div>
       <p class="meta">accessible</p>
       <h3>Zelaieta, Mutriku</h3>
       <p class="price">from €125 <span>/ ночь · €875</span></p>
@@ -1327,7 +1566,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   </div>
   <p class="stay-note">Сдвигать на 12–19 имеет смысл для автодома (кемпинг выходит из пика). Для дома с кухней — нет: сентябрь у caserío всё ещё высокий.</p>
 </section>
-<footer class="foot">Срез 12 авг 2026. CamperDays Bilbao RT 5–12 сен. Turismo Zumaia / jesuskoa.net. Nekatur. Gran Camping Zarautz. Rhino BIO 21–28 сен.</footer>
+<footer class="foot">Срез 12 авг 2026. CamperDays Bilbao RT 5–12 сен. Turismo Zumaia / jesuskoa.net. Nekatur. Gran Camping Zarautz. Rhino BIO 21–28 сен. Фото автодомов: Roadsurfer. Дома: jesuskoa.net, Nekatur.</footer>
 </div>
 
 <div id="panel-fly" class="panel" role="tabpanel" hidden>
@@ -1526,14 +1765,15 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
 </div>
 <script>
 (function () {
-  var ids = ["places", "stay", "fly"];
+  var ids = ["overview", "places", "stay", "fly"];
   var titles = {
+    overview: "Испания Север · обзор",
     places: "Испания Север · места",
     stay: "Испания Север · жильё",
     fly: "Испания Север · как добраться"
   };
   function show(which) {
-    if (ids.indexOf(which) < 0) which = "places";
+    if (ids.indexOf(which) < 0) which = "overview";
     ids.forEach(function (id) {
       var on = id === which;
       var panel = document.getElementById("panel-" + id);
@@ -1546,9 +1786,18 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     document.title = titles[which];
   }
   function fromHash() {
-    var h = (location.hash || "#places").replace(/^#/, "");
-    if (ids.indexOf(h) >= 0) show(h);
-    else show("places");
+    var h = (location.hash || "#overview").replace(/^#/, "");
+    if (ids.indexOf(h) >= 0) {
+      show(h);
+      return;
+    }
+    show("places");
+    var el = document.getElementById(h);
+    if (el) {
+      requestAnimationFrame(function () {
+        el.scrollIntoView({ block: "start" });
+      });
+    }
   }
   ids.forEach(function (id) {
     document.getElementById("tab-" + id).addEventListener("click", function (e) {
