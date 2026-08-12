@@ -160,6 +160,7 @@ body { padding-top: 48px; }
   top: 0; left: 0; right: 0;
   z-index: 20;
   display: flex;
+  flex-wrap: wrap;
   gap: 0;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
@@ -251,9 +252,42 @@ th, td {
 }
 th { color: var(--muted); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; font-size: 11px; }
 tr.sum td { font-weight: 600; font-family: Fraunces, serif; font-size: 16px; }
+tr.pick td:first-child { box-shadow: inset 3px 0 0 var(--pin); }
+td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
+.win-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0 0 1.6em;
+  border-bottom: 1px solid var(--line);
+}
+.win-tab {
+  font-family: Outfit, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px 16px 10px 0;
+  margin-right: 18px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.win-tab.is-on { color: var(--ink); border-bottom-color: var(--pin); }
+.win-block { display: none; }
+.win-block.is-on { display: block; }
+.riga {
+  margin-top: 3em;
+  padding-top: 2em;
+  border-top: 1px solid var(--line);
+}
+.pair {
+  font-size: 15px;
+  max-width: 72ch;
+  margin: -0.4em 0 1.8em;
+}
 @media (max-width: 800px) {
   .stay-grid { grid-template-columns: 1fr; }
-  .tab { padding: 14px 12px 12px; letter-spacing: 0.06em; }
+  .tab { padding: 14px 10px 12px; letter-spacing: 0.04em; font-size: 12px; }
 }
 </style>
 </head>
@@ -261,6 +295,7 @@ tr.sum td { font-weight: 600; font-family: Fraunces, serif; font-size: 16px; }
 <nav class="tabs" role="tablist">
   <a href="#places" class="tab is-on" id="tab-places" role="tab" aria-selected="true">Места</a>
   <a href="#stay" class="tab" id="tab-stay" role="tab" aria-selected="false">Автодом и жильё</a>
+  <a href="#fly" class="tab" id="tab-fly" role="tab" aria-selected="false">Как добраться</a>
 </nav>
 <div id="panel-places" class="panel is-on" role="tabpanel">
 
@@ -1245,31 +1280,245 @@ tr.sum td { font-weight: 600; font-family: Fraunces, serif; font-size: 16px; }
 </section>
 <footer class="foot">Срез 12 авг 2026. CamperDays Bilbao RT 5–12 сен. Turismo Zumaia / jesuskoa.net. Nekatur. Gran Camping Zarautz. Rhino BIO 21–28 сен.</footer>
 </div>
+
+<div id="panel-fly" class="panel" role="tabpanel" hidden>
+<header class="cover stay-cover">
+  <div>
+    <p class="kicker">Испания Север · перелёт</p>
+    <h1>Как <em>добраться</em></h1>
+    <p class="lede">СПб → север Испании. 2 взрослых + ребёнок ~2 лет. Рабочий хаб — Таллин, ночь накануне. Рига дешевле, но с двухлеткой тяжело — внизу отдельно.</p>
+  </div>
+  <p class="kicker">срез 12 авг 2026 · 1 взрослый эконом</p>
+</header>
+
+<section class="stay">
+  <p class="stay-lead">Фильтры: не больше двух пересадок, не Лондон, не ночь в воздухе. Ночёвка на земле — ок. Поезд из Мадрида в цену самолёта не входит (~€35–55). Строки Авиасейлс часто с багажом 23 кг, Google — часто без.</p>
+  <p class="stay-note">С ребёнком в день вылета из TLL не успеть. Граница Нарва пешком 07:00–19:00: туда 15–60 мин, обратно EST→RU 4–6 ч. После прилёта в TLL — ночь в Таллине, утром переход, днём домой. Пулково днём есть (TK через IST), но 50–95k. Дешёвый LED — вылет 01:40–02:55, не берём.</p>
+
+  <nav class="win-tabs" aria-label="Окна дат">
+    <a href="#fly" class="win-tab is-on" data-win="a">3–6 + 13–15 сен</a>
+    <a href="#fly" class="win-tab" data-win="b">10–13 + 20–22 сен</a>
+  </nav>
+
+  <div id="win-a" class="win-block is-on">
+    <h2 class="stay-h">Туда · топ-10 · 3–6 сентября</h2>
+    <p class="stay-note">Земля: ночь Таллин, кроме LED.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Дата</th><th>Маршрут</th><th>Стык</th><th>В пути</th><th>Самолёт</th><th>До берега</th></tr>
+        </thead>
+        <tbody>
+          <tr class="pick"><td>1</td><td>4 сен, пт</td><td>TLL 08:55 → MAD 14:35</td><td>WAW 1 ч</td><td>6.5 ч</td><td class="fare">21 558 ₽</td><td>поезд тот же день · Авиасейлс</td></tr>
+          <tr class="pick"><td>2</td><td>3 сен, чт</td><td>TLL 08:55 → MAD 14:35</td><td>WAW 1 ч</td><td>6.5 ч</td><td class="fare">17 729 ₽</td><td>поезд тот же день · Google</td></tr>
+          <tr><td>3</td><td>6 сен, вс</td><td>TLL 08:55 → MAD 14:35</td><td>WAW 1 ч</td><td>6.5 ч</td><td class="fare">19 257 ₽</td><td>поезд тот же день · Google</td></tr>
+          <tr><td>4</td><td>3 сен, чт</td><td>TLL 16:40 → MAD 22:15</td><td>BRU 1.5 ч</td><td>6.5 ч</td><td class="fare">18 076 ₽</td><td>ночь MAD, поезд 4 сен</td></tr>
+          <tr><td>5</td><td>3 сен, чт</td><td>TLL 07:30 → MAD 13:40</td><td>AMS 2 ч</td><td>7 ч</td><td class="fare">24 547 ₽</td><td>поезд тот же день</td></tr>
+          <tr><td>6</td><td>4 сен, пт</td><td>TLL 07:30 → BIO 17:30</td><td>CDG 6 ч</td><td>11 ч</td><td class="fare">24 582 ₽</td><td>сразу Баски</td></tr>
+          <tr class="pick"><td>7</td><td>4 сен, пт</td><td>TLL 14:05 → BIO 22:45</td><td>AMS 5 ч</td><td>10 ч</td><td class="fare">~29k</td><td>сразу Баски, поздно. RT 4–14: 51 692 ₽ оба конца</td></tr>
+          <tr><td>8</td><td>5 сен, сб</td><td>TLL 14:05 → BIO 22:45</td><td>AMS 5 ч</td><td>10 ч</td><td class="fare">29 332 ₽</td><td>сразу Баски, поздно</td></tr>
+          <tr><td>9</td><td>5 сен, сб</td><td>TLL 18:20 → OPO 22:45</td><td>FRA 1 ч</td><td>6.5 ч</td><td class="fare">30 382 ₽</td><td>Галисия, поздно · +€15–30 автобус</td></tr>
+          <tr><td>10</td><td>4 сен, пт</td><td>LED 12:45 → MAD 22:35</td><td>IST 2 ч</td><td>11 ч</td><td class="fare">94 712 ₽</td><td>единственный дневной LED · ночь MAD</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pair"><b>Пара туда:</b> #1 или #2 (TLL→MAD утром, поезд в тот же день) или #7 (BIO в RT).</p>
+
+    <h2 class="stay-h">Обратно · топ-10 · 13–15 сентября</h2>
+    <p class="stay-note">После TLL: ночь Таллин → утром граница → днём домой.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Дата</th><th>Маршрут</th><th>Стык</th><th>В пути</th><th>Самолёт</th><th>Заметка</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>13 сен, вс</td><td>BIO 06:45 → TLL 13:15</td><td>AMS 1 ч</td><td>5.5 ч</td><td class="fare">23 641 ₽</td><td>сразу с берега, рано</td></tr>
+          <tr class="pick"><td>2</td><td>14 сен, пн</td><td>BIO 12:00 → TLL 19:55</td><td>AMS 2.5 ч</td><td>7 ч</td><td class="fare">в RT 51 692 ₽</td><td>лучшее время с BIO, оба конца</td></tr>
+          <tr class="pick"><td>3</td><td>13 сен, вс</td><td>MAD 13:05 → TLL 19:55</td><td>AMS 1 ч</td><td>6 ч</td><td class="fare">25 953 ₽</td><td>+€35–55 утром, удобно</td></tr>
+          <tr class="pick"><td>4</td><td>15 сен, вт</td><td>MAD 13:05 → TLL 19:55</td><td>AMS 1 ч</td><td>6 ч</td><td class="fare">22 992 ₽</td><td>то же, на 2 дня позже</td></tr>
+          <tr><td>5</td><td>15 сен, вт</td><td>MAD 10:25 → TLL 19:55</td><td>AMS 3.5 ч</td><td>8.5 ч</td><td class="fare">20 604 ₽</td><td>длиннее стыковка</td></tr>
+          <tr><td>6</td><td>13 сен, вс</td><td>MAD 06:00 → TLL 13:40</td><td>WAW 1.5 ч</td><td>6.5 ч</td><td class="fare">12 449 ₽</td><td>дёшево, 06:00 жёстко</td></tr>
+          <tr><td>7</td><td>15 сен, вт</td><td>MAD 05:55 → TLL 13:05</td><td>FRA 1 ч</td><td>6 ч</td><td class="fare">21 568 ₽</td><td>рано</td></tr>
+          <tr><td>8</td><td>14 сен, пн</td><td>BIO 06:45 → TLL 13:15</td><td>AMS 1 ч</td><td>5.5 ч</td><td class="fare">41 027 ₽</td><td>one-way дороже RT</td></tr>
+          <tr><td>9</td><td>14 сен, пн</td><td>BIO 17:50 → TLL 00:35</td><td>FRA 1 ч</td><td>5.5 ч</td><td class="fare">38 736 ₽</td><td>прилёт 00:35 — на грани ночи</td></tr>
+          <tr><td>10</td><td>13 сен, вс</td><td>MAD 12:00 → LED 23:15</td><td>IST 2 ч</td><td>10 ч</td><td class="fare">48 612 ₽</td><td>дневной LED. Дешёвые прилетают 01:30–04:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pair"><b>Пара обратно:</b> #2 (BIO 12:00 в RT) или #3/#4 (MAD днём в TLL).</p>
+  </div>
+
+  <div id="win-b" class="win-block">
+    <h2 class="stay-h">Туда · топ-10 · 10–13 сентября</h2>
+    <p class="stay-note">Google Flights, часто без 23 кг.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Дата</th><th>Маршрут</th><th>Стык</th><th>В пути</th><th>Самолёт</th><th>До берега</th></tr>
+        </thead>
+        <tbody>
+          <tr class="pick"><td>1</td><td>10 сен, чт</td><td>TLL 08:55 → MAD 14:35</td><td>WAW 1 ч</td><td>6.5 ч</td><td class="fare">22 887 ₽</td><td>поезд тот же день</td></tr>
+          <tr><td>2</td><td>10 сен, чт</td><td>TLL 07:30 → MAD 13:40</td><td>AMS 2 ч</td><td>7 ч</td><td class="fare">22 637 ₽</td><td>поезд тот же день</td></tr>
+          <tr><td>3</td><td>10 сен, чт</td><td>TLL 16:40 → MAD 22:15</td><td>BRU 1.5 ч</td><td>6.5 ч</td><td class="fare">22 374 ₽</td><td>ночь MAD, поезд 11 сен</td></tr>
+          <tr><td>4</td><td>11 сен, пт</td><td>TLL 16:55 → MAD 23:25</td><td>BRU 2 ч</td><td>7.5 ч</td><td class="fare">21 992 ₽</td><td>ночь MAD, поезд 12 сен</td></tr>
+          <tr class="pick"><td>5</td><td>11 сен, пт</td><td>TLL 14:05 → BIO 22:45</td><td>AMS 5 ч</td><td>10 ч</td><td class="fare">27 260 ₽</td><td>сразу Баски, поздно</td></tr>
+          <tr><td>6</td><td>10 сен, чт</td><td>TLL 07:30 → BIO 16:30</td><td>AMS 5 ч</td><td>10 ч</td><td class="fare">30 125 ₽</td><td>сразу Баски днём</td></tr>
+          <tr><td>7</td><td>11 сен, пт</td><td>TLL 08:55 → MAD 14:35</td><td>WAW 1 ч</td><td>6.5 ч</td><td class="fare">34 922 ₽</td><td>поезд тот же день, дороже чем чт</td></tr>
+          <tr><td>8</td><td>11 сен, пт</td><td>TLL 12:15 → BIO 19:15</td><td>DUS 3.5 ч</td><td>8 ч</td><td class="fare">17 671 ₽</td><td>Eurowings, без ручной клади в тарифе</td></tr>
+          <tr><td>9</td><td>10 сен, чт</td><td>TLL 13:55 → BIO 22:25</td><td>FRA 5 ч</td><td>9.5 ч</td><td class="fare">31 911 ₽</td><td>сразу Баски, поздно</td></tr>
+          <tr><td>10</td><td>10–13 сен</td><td>LED дневной TK → MAD</td><td>IST</td><td>~11 ч</td><td class="fare">~95k</td><td>срез 4 сен. Дешевле дневного LED не нашли</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pair"><b>Пара туда:</b> #1 (чт, MAD утром) или #5 (пт, BIO).</p>
+
+    <h2 class="stay-h">Обратно · топ-10 · 20–22 сентября</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Дата</th><th>Маршрут</th><th>Стык</th><th>В пути</th><th>Самолёт</th><th>Заметка</th></tr>
+        </thead>
+        <tbody>
+          <tr class="pick"><td>1</td><td>22 сен, вт</td><td>BIO 12:00 → TLL 19:55</td><td>AMS 2.5 ч</td><td>7 ч</td><td class="fare">27 091 ₽</td><td>лучшее время с BIO</td></tr>
+          <tr class="pick"><td>2</td><td>22 сен, вт</td><td>MAD 13:05 → TLL 19:55</td><td>AMS 1 ч</td><td>6 ч</td><td class="fare">22 992 ₽</td><td>+€35–55 утром, удобно</td></tr>
+          <tr><td>3</td><td>22 сен, вт</td><td>BIO 06:50 → TLL 17:15</td><td>FRA 5 ч</td><td>9.5 ч</td><td class="fare">26 622 ₽</td><td>дешевле AMS, дольше</td></tr>
+          <tr><td>4</td><td>22 сен, вт</td><td>BIO 06:45 → TLL 13:15</td><td>AMS 1 ч</td><td>5.5 ч</td><td class="fare">29 001 ₽</td><td>рано</td></tr>
+          <tr><td>5</td><td>22 сен, вт</td><td>MAD 06:00 → TLL 13:15</td><td>AMS 1.5 ч</td><td>6 ч</td><td class="fare">16 974 ₽</td><td>дёшево, 06:00 жёстко</td></tr>
+          <tr><td>6</td><td>22 сен, вт</td><td>MAD 05:55 → TLL 13:05</td><td>FRA 1 ч</td><td>6 ч</td><td class="fare">21 568 ₽</td><td>рано</td></tr>
+          <tr><td>7</td><td>21 сен, пн</td><td>BIO 06:50 → TLL 17:10</td><td>FRA 5 ч</td><td>9 ч</td><td class="fare">31 207 ₽</td><td>пн с BIO</td></tr>
+          <tr><td>8</td><td>20 сен, вс</td><td>BIO 06:45 → TLL 13:15</td><td>AMS 1 ч</td><td>5.5 ч</td><td class="fare">46 959 ₽</td><td>вс с BIO дорого</td></tr>
+          <tr><td>9</td><td>20 сен, вс</td><td>BIO 17:50 → TLL 00:25</td><td>FRA 1 ч</td><td>5.5 ч</td><td class="fare">31 684 ₽</td><td>прилёт 00:25 — на грани ночи</td></tr>
+          <tr><td>10</td><td>20–22 сен</td><td>MAD дневной TK → LED</td><td>IST</td><td>~10 ч</td><td class="fare">~49k</td><td>срез 13 сен. Ночные прилёты 01:30–04:00 не берём</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pair"><b>Пара обратно:</b> #1 (BIO 12:00) или #2 (MAD днём).</p>
+  </div>
+
+  <div class="riga">
+    <h2 class="stay-h">Рига · отдельно</h2>
+    <p class="stay-note">С ребёнком тяжело: Нарва→Рига ~7 ч + ночь в Риге туда. Обратно: ночь Рига + автобус 07:30 + очередь EST→RU 4–6 ч + лучше ещё ночь в Нарве. Прямые airBaltic RIX–MAD (вт/чт/вс) и RIX–OPO (сб) дешёвые — цифры здесь, в основной план не кладём. Граница пешком 07:00–19:00. Автобус 12:45 Рига→Нарва приезжает ~20:00 — граница уже закрыта.</p>
+
+    <h2 class="stay-h">Туда 3–6 сен</h2>
+    <p class="stay-note">Авиасейлс, часто с багажом. Связка прямых MAD 3+13 сен ~51.5k.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Дата</th><th>Маршрут</th><th>Стык</th><th>Самолёт</th><th>Last mile</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>6 сен, вс</td><td>RIX 14:00 → MAD 17:10</td><td>прямой</td><td class="fare">30 344 ₽</td><td>+€35–55 + ночь MAD</td></tr>
+          <tr><td>3 сен, чт</td><td>RIX 14:10 → MAD 17:20</td><td>прямой</td><td class="fare">34 139 ₽</td><td>+€35–55 + ночь MAD</td></tr>
+          <tr><td>5 сен, сб</td><td>RIX 13:25 → OPO 15:50</td><td>прямой</td><td class="fare">34 855 ₽</td><td>+€15–30 автобус SCQ</td></tr>
+          <tr><td>4 сен, пт</td><td>RIX 11:50 → BIO 16:30</td><td>AMS 1 ч</td><td class="fare">22 949 ₽</td><td>сразу Баски</td></tr>
+          <tr><td>4 сен, пт</td><td>RIX 17:00 → BIO 22:45</td><td>AMS 2.5 ч</td><td class="fare">21 926 ₽</td><td>поздно</td></tr>
+          <tr><td>3 сен, чт</td><td>RIX 17:05 → MAD 22:15</td><td>BRU 1 ч</td><td class="fare">18 849 ₽</td><td>+€35–55 + ночь MAD</td></tr>
+          <tr><td>6 сен, вс</td><td>RIX 11:50 → MAD 19:35</td><td>AMS 4 ч</td><td class="fare">24 228 ₽</td><td>+€35–55 + ночь MAD</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="stay-h">Обратно 13–15 сен</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Дата</th><th>Маршрут</th><th>Стык</th><th>Самолёт</th><th>Last mile</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>13 сен, вс</td><td>MAD 17:50 → RIX 22:45</td><td>прямой</td><td class="fare">17 390 ₽</td><td>+€35–55 утром</td></tr>
+          <tr><td>15 сен, вт</td><td>MAD 18:05 → RIX 23:00</td><td>прямой</td><td class="fare">20 058 ₽</td><td>+€35–55 утром</td></tr>
+          <tr><td>13 сен, вс</td><td>MAD 06:00 → RIX 13:10</td><td>WAW</td><td class="fare">17 765 ₽</td><td>06:00 жёстко</td></tr>
+          <tr><td>14 сен, пн</td><td>MAD 06:00 → RIX 13:10</td><td>WAW</td><td class="fare">28 320 ₽</td><td>прямого в пн нет</td></tr>
+          <tr><td>14 сен, пн</td><td>MAD 16:30 → RIX 23:05</td><td>MUC</td><td class="fare">61 119 ₽</td><td>удобно, дорого</td></tr>
+          <tr><td>13 сен, вс</td><td>OPO 08:35 → RIX 19:00</td><td>BCN</td><td class="fare">34 896 ₽</td><td>+€15–30</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="stay-h">Туда 10–13 сен</h2>
+    <p class="stay-note">Google, часто без багажа. Связка прямых MAD 13+22 сен ≈ 28.5k — дешевле первого окна, земля та же тяжёлая.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Дата</th><th>Маршрут</th><th>Стык</th><th>Самолёт</th><th>Last mile</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>13 сен, вс</td><td>RIX 14:00 → MAD 17:10</td><td>прямой</td><td class="fare">18 180 ₽</td><td>+€35–55 + ночь MAD</td></tr>
+          <tr><td>10 сен, чт</td><td>RIX 14:10 → MAD 17:20</td><td>прямой</td><td class="fare">28 503 ₽</td><td>+€35–55 + ночь MAD</td></tr>
+          <tr><td>12 сен, сб</td><td>RIX 13:25 → OPO 15:50</td><td>прямой</td><td class="fare">28 687 ₽</td><td>+€15–30</td></tr>
+          <tr><td>10 сен, чт</td><td>RIX 11:50 → BIO 16:30</td><td>AMS 1 ч</td><td class="fare">27 018 ₽</td><td>сразу Баски</td></tr>
+          <tr><td>11 / 12 сен</td><td>RIX 11:50 → BIO 16:30</td><td>AMS 1 ч</td><td class="fare">28 929 ₽</td><td>сразу Баски</td></tr>
+          <tr><td>10 сен, чт</td><td>RIX 17:05 → MAD 22:15</td><td>BRU</td><td class="fare">22 138 ₽</td><td>+€35–55 + ночь MAD</td></tr>
+          <tr><td>13 сен, вс</td><td>RIX 07:45 → MAD 13:40</td><td>AMS</td><td class="fare">24 305 ₽</td><td>поезд в тот же день</td></tr>
+          <tr><td>11 сен, пт</td><td>RIX 17:00 → BIO 22:45</td><td>AMS</td><td class="fare">29 884 ₽</td><td>поздно</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="stay-h">Обратно 20–22 сен</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Дата</th><th>Маршрут</th><th>Стык</th><th>Самолёт</th><th>Last mile</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>22 сен, вт</td><td>MAD 18:05 → RIX 23:00</td><td>прямой</td><td class="fare">10 371 ₽</td><td>+€35–55 утром</td></tr>
+          <tr><td>20 сен, вс</td><td>MAD 17:50 → RIX 22:45</td><td>прямой</td><td class="fare">14 669 ₽</td><td>+€35–55 утром</td></tr>
+          <tr><td>20 сен, вс</td><td>MAD 06:00 → RIX 13:10</td><td>WAW</td><td class="fare">17 129 ₽</td><td>06:00 жёстко</td></tr>
+          <tr><td>21 сен, пн</td><td>MAD 06:00 → RIX 13:10</td><td>WAW</td><td class="fare">23 815 ₽</td><td>прямого в пн нет</td></tr>
+          <tr><td>21 сен, пн</td><td>MAD 17:00 → RIX 23:40</td><td>FRA</td><td class="fare">28 923 ₽</td><td>удобно</td></tr>
+          <tr><td>21 сен, пн</td><td>MAD 16:30 → RIX 23:05</td><td>MUC</td><td class="fare">39 645 ₽</td><td>дороже FRA</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<footer class="foot">Срез 12 авг 2026. Авиасейлс (часто с багажом) и Google Flights (часто без). Open-jaw: TLL→BIO / MAD→TLL или наоборот, если маршрут линейный.</footer>
+</div>
 <script>
 (function () {
-  var places = document.getElementById("panel-places");
-  var stay = document.getElementById("panel-stay");
-  var tabPlaces = document.getElementById("tab-places");
-  var tabStay = document.getElementById("tab-stay");
+  var ids = ["places", "stay", "fly"];
+  var titles = {
+    places: "Испания Север · места",
+    stay: "Испания Север · жильё",
+    fly: "Испания Север · как добраться"
+  };
   function show(which) {
-    var onStay = which === "stay";
-    places.classList.toggle("is-on", !onStay);
-    stay.classList.toggle("is-on", onStay);
-    stay.hidden = !onStay;
-    tabPlaces.classList.toggle("is-on", !onStay);
-    tabStay.classList.toggle("is-on", onStay);
-    tabPlaces.setAttribute("aria-selected", String(!onStay));
-    tabStay.setAttribute("aria-selected", String(onStay));
-    if (onStay) document.title = "Испания Север · жильё";
-    else document.title = "Испания Север · места";
+    if (ids.indexOf(which) < 0) which = "places";
+    ids.forEach(function (id) {
+      var on = id === which;
+      var panel = document.getElementById("panel-" + id);
+      var tab = document.getElementById("tab-" + id);
+      panel.classList.toggle("is-on", on);
+      panel.hidden = !on;
+      tab.classList.toggle("is-on", on);
+      tab.setAttribute("aria-selected", String(on));
+    });
+    document.title = titles[which];
   }
   function fromHash() {
-    show(location.hash === "#stay" ? "stay" : "places");
+    var h = (location.hash || "#places").replace(/^#/, "");
+    show(h);
   }
-  tabPlaces.addEventListener("click", function (e) { e.preventDefault(); location.hash = "places"; });
-  tabStay.addEventListener("click", function (e) { e.preventDefault(); location.hash = "stay"; });
+  ids.forEach(function (id) {
+    document.getElementById("tab-" + id).addEventListener("click", function (e) {
+      e.preventDefault();
+      location.hash = id;
+    });
+  });
   window.addEventListener("hashchange", fromHash);
   fromHash();
+
+  var winBtns = document.querySelectorAll(".win-tab");
+  var winBlocks = document.querySelectorAll(".win-block");
+  winBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      var w = btn.getAttribute("data-win");
+      winBtns.forEach(function (b) { b.classList.toggle("is-on", b === btn); });
+      winBlocks.forEach(function (el) { el.classList.toggle("is-on", el.id === "win-" + w); });
+    });
+  });
 })();
 </script>
 
