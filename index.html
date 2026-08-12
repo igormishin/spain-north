@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Испания Север · места</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +15,10 @@
   --moss: #3a4a36;
   --pin: #c83a28;
   --line: #d4c7ae;
+  --tabs: 48px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
 html, body { background: var(--paper); color: var(--ink); }
 body {
   font-family: Outfit, sans-serif;
@@ -74,12 +76,13 @@ body {
 }
 .card {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  grid-template-rows: auto minmax(200px, 1fr) minmax(0, auto) auto;
   height: 100vh;
   overflow: hidden;
   padding: 14px 14px 10px;
   border-right: 1px solid var(--line);
   gap: 8px;
+  scroll-margin-top: calc(var(--tabs) + env(safe-area-inset-top, 0px));
 }
 .card:last-child { border-right: none; }
 .meta {
@@ -103,12 +106,14 @@ h2 {
 .photos {
   display: grid;
   gap: 3px;
-  min-height: 0;
+  min-height: 200px;
+  height: 100%;
   overflow: hidden;
 }
 .photos img {
   width: 100%;
   height: 100%;
+  min-height: 0;
   object-fit: cover;
   display: block;
   background: #cfc3ad;
@@ -118,8 +123,10 @@ h2 {
 .photos.n3 { grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; }
 .photos.n3 img:first-child { grid-row: 1 / span 2; }
 .photos.n4 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.photos.n0 { display: none; }
 .copy {
   min-height: 0;
+  max-height: 18vh;
   overflow: hidden;
 }
 .copy p { margin-bottom: 0.35em; }
@@ -151,20 +158,21 @@ h2 {
 @media (max-width: 1100px) {
   .spread { grid-template-columns: 1fr; height: auto; overflow: visible; }
   .card { height: auto; overflow: visible; border-right: none; border-bottom: 1px solid var(--line); grid-template-rows: auto 42vh auto auto; }
+  .copy { max-height: none; }
   .locator img { height: 24vh; }
 }
 
-body { padding-top: 48px; }
+body { padding-top: calc(var(--tabs) + env(safe-area-inset-top, 0px)); }
 .tabs {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 20;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
-  padding: 0 6vw;
+  padding: env(safe-area-inset-top, 0px) 6vw 0;
 }
 .tab {
   font-family: Outfit, sans-serif;
@@ -179,10 +187,11 @@ body { padding-top: 48px; }
   margin-bottom: -1px;
 }
 .tab.is-on { color: var(--ink); border-bottom-color: var(--pin); }
+.tab .short { display: none; }
 .panel { display: none; }
 .panel.is-on { display: block; }
-#panel-places .cover { min-height: calc(100vh - 48px); }
-#panel-places .spread, #panel-places .card { height: calc(100vh - 48px); }
+#panel-places .cover { min-height: calc(100vh - var(--tabs) - env(safe-area-inset-top, 0px)); }
+#panel-places .spread, #panel-places .card { height: calc(100vh - var(--tabs) - env(safe-area-inset-top, 0px)); }
 @media (max-width: 1100px) {
   #panel-places .spread, #panel-places .card { height: auto; }
 }
@@ -287,15 +296,55 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
 }
 @media (max-width: 800px) {
   .stay-grid { grid-template-columns: 1fr; }
-  .tab { padding: 14px 10px 12px; letter-spacing: 0.04em; font-size: 12px; }
+  .tabs { padding-left: 8px; padding-right: 8px; }
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px 6px 10px;
+    letter-spacing: 0.04em;
+    font-size: 12px;
+  }
+  .tab .long { display: none; }
+  .tab .short { display: inline; }
+  .cover { padding: 4vh 5vw 3vh; min-height: 0; }
+  .cover h1 { font-size: clamp(36px, 11vw, 56px); max-width: none; }
+  .cover .lede { font-size: 16px; margin-top: 1em; }
+  .cover .index { gap: 6px 14px; margin-top: 1.6em; font-size: 12px; }
+  .card {
+    padding: 16px 16px 14px;
+    gap: 10px;
+    grid-template-rows: auto minmax(180px, 36vh) auto auto;
+  }
+  h2 { font-size: 22px; }
+  .copy .what { font-size: 15px; }
+  .locator img { height: 14vh; }
+  .stay { padding: 24px 5vw 16px; }
+  .stay-cover { padding: 4vh 5vw 3vh; }
+  .stay-h { font-size: 22px; }
+  .stay-lead { font-size: 16px; }
+  .opt { padding: 16px; }
+  .opt h3 { font-size: 20px; }
+  .opt .price { font-size: 24px; }
+  .table-wrap {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    margin-left: -5vw;
+    margin-right: -5vw;
+    padding: 0 5vw;
+  }
+  .table-wrap table { min-width: 680px; }
+  table { font-size: 12px; }
+  th, td { padding: 8px 10px; }
+  .win-tab { font-size: 12px; padding: 10px 10px 10px 0; margin-right: 10px; }
+  .foot { padding: 20px 5vw 36px; }
 }
 </style>
 </head>
 <body>
 <nav class="tabs" role="tablist">
   <a href="#places" class="tab is-on" id="tab-places" role="tab" aria-selected="true">Места</a>
-  <a href="#stay" class="tab" id="tab-stay" role="tab" aria-selected="false">Автодом и жильё</a>
-  <a href="#fly" class="tab" id="tab-fly" role="tab" aria-selected="false">Как добраться</a>
+  <a href="#stay" class="tab" id="tab-stay" role="tab" aria-selected="false"><span class="long">Автодом и жильё</span><span class="short">Жильё</span></a>
+  <a href="#fly" class="tab" id="tab-fly" role="tab" aria-selected="false"><span class="long">Как добраться</span><span class="short">Перелёт</span></a>
 </nav>
 <div id="panel-places" class="panel is-on" role="tabpanel">
 
@@ -303,7 +352,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   <div>
     <p class="kicker">Испания Север · 50 мест</p>
     <h1>Берег, <em>запад → восток</em></h1>
-    <p class="lede">От Cíes до Hondarribia. Три карточки на экран. Красная точка — где это на всём берегу.</p>
+    <p class="lede">От Cíes до Hondarribia. Красная точка — где это на всём берегу.</p>
     <nav class="index">
       <a href="#cies">Islas Cíes</a><a href="#razo">Razo</a><a href="#combarro">Combarro</a><a href="#santiago">Santiago de Compostela</a><a href="#hercules">Torre de Hércules</a><a href="#pantin">Pantín</a><a href="#ortegal">Cabo Ortegal</a><a href="#catedrais">Praia das Catedrais</a><a href="#tapia">Tapia de Casariego</a><a href="#frejulfe">Frejulfe</a><a href="#luarca">Luarca</a><a href="#cudillero">Cudillero</a><a href="#salinas">Salinas</a><a href="#penas">Cabo Peñas</a><a href="#rodiles">Rodiles</a><a href="#peridiella">Senda de la Peridiella</a><a href="#lastres">Lastres</a><a href="#la_griega">Playa de La Griega</a><a href="#cuevona">La Cuevona</a><a href="#ribadesella">Ribadesella</a><a href="#covadonga">Lagos de Covadonga</a><a href="#gulpiyuri">Gulpiyuri</a><a href="#san_antolin">San Antolín</a><a href="#bufones">Bufones de Pría</a><a href="#fuente_de">Fuente Dé</a><a href="#palombina">Playa de Palombina</a><a href="#llanes">Llanes</a><a href="#torimbia">Playa de Torimbia</a><a href="#san_vicente">San Vicente de la Barquera</a><a href="#oyambre">Oyambre</a><a href="#comillas">Comillas</a><a href="#altamira">Altamira (Neocueva)</a><a href="#santillana">Santillana del Mar</a><a href="#liencres">Dunas de Liencres</a><a href="#cabarceno">Parque de la Naturaleza de Cabárceno</a><a href="#somo">Somo</a><a href="#loredo">Loredo</a><a href="#sopelana">Sopelana</a><a href="#guggenheim">Guggenheim Bilbao</a><a href="#gaztelugatxe">San Juan de Gaztelugatxe</a><a href="#mundaka">Mundaka (смотреть)</a><a href="#lekeitio">Lekeitio</a><a href="#flysch">Flysch Zumaia (Itzurun)</a><a href="#getaria">Getaria</a><a href="#zarautz">Zarautz</a><a href="#concha">Playa de La Concha</a><a href="#donostia">San Sebastián</a><a href="#zurriola">Zurriola</a><a href="#pasai">Pasai Donibane</a><a href="#hondarribia">Hondarribia</a>
     </nav>
@@ -1498,7 +1547,8 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   }
   function fromHash() {
     var h = (location.hash || "#places").replace(/^#/, "");
-    show(h);
+    if (ids.indexOf(h) >= 0) show(h);
+    else show("places");
   }
   ids.forEach(function (id) {
     document.getElementById("tab-" + id).addEventListener("click", function (e) {
