@@ -153,9 +153,117 @@ h2 {
   .card { height: auto; overflow: visible; border-right: none; border-bottom: 1px solid var(--line); grid-template-rows: auto 42vh auto auto; }
   .locator img { height: 24vh; }
 }
+
+body { padding-top: 48px; }
+.tabs {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  display: flex;
+  gap: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 0 6vw;
+}
+.tab {
+  font-family: Outfit, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 14px 18px 12px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.tab.is-on { color: var(--ink); border-bottom-color: var(--pin); }
+.panel { display: none; }
+.panel.is-on { display: block; }
+#panel-places .cover { min-height: calc(100vh - 48px); }
+#panel-places .spread, #panel-places .card { height: calc(100vh - 48px); }
+@media (max-width: 1100px) {
+  #panel-places .spread, #panel-places .card { height: auto; }
+}
+.stay-cover { min-height: auto; padding: 6vh 6vw 4vh; }
+.stay-cover h1 { max-width: 16ch; }
+.stay {
+  padding: 40px 6vw 20px;
+  max-width: 1200px;
+}
+.stay-lead {
+  font-size: 18px;
+  max-width: 62ch;
+  margin-bottom: 2.2em;
+  color: var(--ink);
+}
+.stay-h {
+  font-family: Fraunces, serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin: 1.6em 0 0.4em;
+}
+.stay-note {
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 72ch;
+  margin-bottom: 1.1em;
+}
+.stay-note a { color: var(--ink); }
+.stay-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-bottom: 1.4em;
+}
+.opt {
+  background: var(--paper);
+  padding: 18px 18px 16px;
+}
+.opt.pick { box-shadow: inset 3px 0 0 var(--pin); }
+.opt h3 {
+  font-family: Fraunces, serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 4px 0 8px;
+}
+.opt .price {
+  font-family: Fraunces, serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.opt .price span { font-size: 14px; color: var(--muted); font-family: Outfit, sans-serif; }
+.opt p { margin-bottom: 0.4em; }
+.table-wrap { overflow-x: auto; margin: 0 0 1.6em; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th { color: var(--muted); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; font-size: 11px; }
+tr.sum td { font-weight: 600; font-family: Fraunces, serif; font-size: 16px; }
+@media (max-width: 800px) {
+  .stay-grid { grid-template-columns: 1fr; }
+  .tab { padding: 14px 12px 12px; letter-spacing: 0.06em; }
+}
 </style>
 </head>
 <body>
+<nav class="tabs" role="tablist">
+  <a href="#places" class="tab is-on" id="tab-places" role="tab" aria-selected="true">Места</a>
+  <a href="#stay" class="tab" id="tab-stay" role="tab" aria-selected="false">Автодом и жильё</a>
+</nav>
+<div id="panel-places" class="panel is-on" role="tabpanel">
+
 <header class="cover">
   <div>
     <p class="kicker">Испания Север · 50 мест</p>
@@ -1021,5 +1129,149 @@ h2 {
 <footer class="foot">
   Фото: Wikimedia Commons. Карта: Esri World Imagery, один кадр на весь берег, пин по координатам.
 </footer>
+</div>
+<div id="panel-stay" class="panel" role="tabpanel" hidden>
+<header class="cover stay-cover">
+  <div>
+    <p class="kicker">Испания Север · жильё</p>
+    <h1>Автодом <em>или</em> дом</h1>
+    <p class="lede">Окно A, Бильбао. 2 взрослых + ребёнок ~2 лет. Срез 12 августа 2026. Одна база на неделю, не 7 отелей.</p>
+  </div>
+  <p class="kicker">с двухлеткой — машина + тихий дом с кухней</p>
+</header>
+
+<section class="stay">
+  <p class="stay-lead">One-way Порту→Бильбао не брать: 0 офферов и слишком длинно. Берём и сдаём в Бильбао. Дома — маленький город или отшиб, первый этаж, кухня. Не Donostia и не променад Zarautz.</p>
+
+  <h2 class="stay-h">Автодома · Roadsurfer Zamudio · 10 мин от BIO</h2>
+  <p class="stay-note">Живые цены CamperDays, сб 5 – сб 12 сен, 7 ночей, без постели и кресла. Автомат, безлимит км.</p>
+  <div class="stay-grid">
+    <article class="opt">
+      <p class="meta"><span class="p">компакт</span> без туалета</p>
+      <h3>Camper Cabin</h3>
+      <p class="price">€773 <span>/ неделя</span></p>
+      <p>Ford Nugget. 5.0 × 2.0 м. Холодный душ снаружи, WC нет. Паркуется как машина.</p>
+      <p class="note">Запасной. С двухлеткой ночью только кемпинг.</p>
+    </article>
+    <article class="opt pick">
+      <p class="meta"><span class="p">брать</span> душ + WC</p>
+      <h3>Family Finca</h3>
+      <p class="price">€888 <span>/ неделя</span></p>
+      <p>6.0 × 3.1 м. Тёплый душ и туалет. 2 спальных зоны, 2 Isofix. Кухня и стулья в цене.</p>
+      <p class="note">Разница с компактом €115. В Getaria не лезть — оставлять на въезде.</p>
+    </article>
+    <article class="opt">
+      <p class="meta">душ + WC</p>
+      <h3>Road House</h3>
+      <p class="price">€922 <span>/ неделя</span></p>
+      <p>5.4 × 2.8 м. Короче Finca, pop-top, 1 Isofix.</p>
+    </article>
+    <article class="opt">
+      <p class="meta">душ + WC</p>
+      <h3>Camper Castle</h3>
+      <p class="price">€984 <span>/ неделя</span></p>
+      <p>7.0 м. Просторнее, полезный вес ~260 кг — тесно по массе.</p>
+    </article>
+  </div>
+  <p class="stay-note">McRent Irun: €1 557–1 826 и 90 км от BIO. Не надо. Депозит Roadsurfer €1 100. Кемпинг Zarautz до 12 сен: €35–44/ночь за 2 взрослых + автодом (высокий сезон).</p>
+
+  <h2 class="stay-h">Дома · кухня, тихо, первый этаж</h2>
+  <p class="stay-note">Mahasti €200 и Urain €210+ — дорого. Рабочий диапазон €85–160. Сентябрь у Jesuskoa — высокий сезон целиком, обе недели одна цена.</p>
+  <div class="stay-grid">
+    <article class="opt pick">
+      <p class="meta"><span class="p">якорь</span> planta baja</p>
+      <h3>Jesuskoa Aritza / Pagoa</h3>
+      <p class="price">€160 <span>/ ночь · €1 120 / неделя</span></p>
+      <p>Oikia, 3 км Zumaia, 4 км Getaria. Оба на первом этаже, 2 спальни, кроватка, кухня, сад, ферма.</p>
+      <p class="note">Июль–август забиты. <a href="https://jesuskoa.net">jesuskoa.net</a></p>
+    </article>
+    <article class="opt">
+      <p class="meta">planta baja</p>
+      <h3>Maddiola Apart</h3>
+      <p class="price">€110–140 <span>/ ночь · €770–980</span></p>
+      <p>Orio. 10 мин Zarautz. 1 спальня + диван, кухня, сад, животные. From €85, на сентябрь выше.</p>
+    </article>
+    <article class="opt">
+      <p class="meta">accessible</p>
+      <h3>Zelaietaberri</h3>
+      <p class="price">from €135 <span>/ ночь · €945</span></p>
+      <p>Itziar–Deba, отшиб у flysch. Дом целиком, 2 спальни, сад. Zarautz ~25 мин.</p>
+    </article>
+    <article class="opt">
+      <p class="meta">accessible</p>
+      <h3>Zelaieta, Mutriku</h3>
+      <p class="price">from €125 <span>/ ночь · €875</span></p>
+      <p>Olatz. 2 взрослых + 2 детей. Тише, Zarautz ~30 мин.</p>
+    </article>
+  </div>
+  <p class="stay-note">Машина BIO 7 дней, компакт автомат: €250–400 с креслом. Rhino на 21–28 сен: €172–258 без экстр. Топливо ~€60.</p>
+
+  <h2 class="stay-h">Сравнение схем · неделя 5–12 сен</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th></th><th>Автодом Finca</th><th>Машина + Maddiola</th><th>Машина + Jesuskoa</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Транспорт</td><td>€888</td><td>€250–400</td><td>€250–400</td></tr>
+        <tr><td>Ночёвки</td><td>кемпинг €140–350</td><td>€770–980</td><td>€1 120</td></tr>
+        <tr><td>Топливо</td><td>~€90</td><td>~€60</td><td>~€60</td></tr>
+        <tr><td>Кресло / постель</td><td>~€90</td><td>~€40</td><td>~€40</td></tr>
+        <tr class="sum"><td>Итого</td><td>~€1 200–1 450</td><td>~€1 150–1 500</td><td>~€1 450–1 650</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="stay-h">Эта неделя и неделя позже</h2>
+  <p class="stay-note">5–12 сен — живой срез автодома. 12–19 сен: автодом живьём не снял. Дома — тот же высокий сезон. Кемпинг Zarautz с 13 сен уже средний сезон.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th></th><th>5–12 сен</th><th>12–19 сен</th><th>Разница</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Family Finca, аренда</td><td><b>€888</b> живой</td><td>не снял. Низкий сезон McRent с 6 сен — обычно дешевле</td><td>ждать живой поиск</td></tr>
+        <tr><td>Camper Cabin</td><td><b>€773</b> живой</td><td>то же: оценка ниже</td><td>—</td></tr>
+        <tr><td>Кемпинг Zarautz, 7 ночей</td><td>высокий до 12 сен · ~€280–350</td><td>средний с 13 сен · ~€180–250</td><td>минус ~€80–120</td></tr>
+        <tr><td>Jesuskoa, 7 ночей</td><td>€1 120</td><td>€1 120</td><td>весь сентябрь высокий</td></tr>
+        <tr><td>Maddiola / Zelaieta</td><td>€770–980</td><td>тот же порядок</td><td>сентябрь не «низкий»</td></tr>
+        <tr><td>Машина BIO, компакт автомат</td><td>~€250–400 с креслом</td><td>Rhino 21–28 сен €172–258 без экстр.</td><td>позже дешевле</td></tr>
+        <tr class="sum"><td>Автодом всё включено</td><td>~€1 200–1 450</td><td>~€1 100–1 350 оценка</td><td>дешевле из‑за кемпинга</td></tr>
+        <tr class="sum"><td>Машина + Jesuskoa</td><td>~€1 450–1 650</td><td>~€1 400–1 600</td><td>почти то же</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="stay-note">Сдвигать на 12–19 имеет смысл для автодома (кемпинг выходит из пика). Для дома с кухней — нет: сентябрь у caserío всё ещё высокий.</p>
+</section>
+<footer class="foot">Срез 12 авг 2026. CamperDays Bilbao RT 5–12 сен. Turismo Zumaia / jesuskoa.net. Nekatur. Gran Camping Zarautz. Rhino BIO 21–28 сен.</footer>
+</div>
+<script>
+(function () {
+  var places = document.getElementById("panel-places");
+  var stay = document.getElementById("panel-stay");
+  var tabPlaces = document.getElementById("tab-places");
+  var tabStay = document.getElementById("tab-stay");
+  function show(which) {
+    var onStay = which === "stay";
+    places.classList.toggle("is-on", !onStay);
+    stay.classList.toggle("is-on", onStay);
+    stay.hidden = !onStay;
+    tabPlaces.classList.toggle("is-on", !onStay);
+    tabStay.classList.toggle("is-on", onStay);
+    tabPlaces.setAttribute("aria-selected", String(!onStay));
+    tabStay.setAttribute("aria-selected", String(onStay));
+    if (onStay) document.title = "Испания Север · жильё";
+    else document.title = "Испания Север · места";
+  }
+  function fromHash() {
+    show(location.hash === "#stay" ? "stay" : "places");
+  }
+  tabPlaces.addEventListener("click", function (e) { e.preventDefault(); location.hash = "places"; });
+  tabStay.addEventListener("click", function (e) { e.preventDefault(); location.hash = "stay"; });
+  window.addEventListener("hashchange", fromHash);
+  fromHash();
+})();
+</script>
+
 </body>
 </html>
