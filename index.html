@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Испания Север · места</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #efe6d4;
+  --ink: #1b1814;
+  --muted: #5c564c;
+  --moss: #3a4a36;
+  --pin: #c83a28;
+  --line: #d4c7ae;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--paper); color: var(--ink); }
+body {
+  font-family: Outfit, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.cover {
+  min-height: 100vh;
+  padding: 8vh 6vw 6vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(1200px 500px at 80% -10%, #d9c9a8 0%, transparent 55%),
+    var(--paper);
+}
+.cover .kicker {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--moss);
+  font-weight: 600;
+}
+.cover h1 {
+  font-family: Fraunces, serif;
+  font-size: clamp(48px, 8vw, 92px);
+  font-weight: 500;
+  line-height: 0.95;
+  max-width: 14ch;
+  margin-top: 0.3em;
+}
+.cover h1 em { font-style: italic; color: var(--pin); }
+.cover .lede {
+  max-width: 42ch;
+  font-size: 18px;
+  color: var(--muted);
+  margin-top: 1.4em;
+}
+.cover .index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 3em;
+  font-size: 13px;
+}
+.cover .index a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+.cover .index a:hover { border-color: var(--pin); }
+.spread {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  height: 100vh;
+  overflow: hidden;
+  padding: 14px 14px 10px;
+  border-right: 1px solid var(--line);
+  gap: 8px;
+}
+.card:last-child { border-right: none; }
+.meta {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.p {
+  color: var(--pin);
+  font-weight: 600;
+  margin-right: 6px;
+}
+h2 {
+  font-family: Fraunces, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 2px 0 2px;
+}
+.photos {
+  display: grid;
+  gap: 3px;
+  min-height: 0;
+  overflow: hidden;
+}
+.photos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #cfc3ad;
+}
+.photos.n1 { grid-template-columns: 1fr; }
+.photos.n2 { grid-template-columns: 1fr 1fr; }
+.photos.n3 { grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; }
+.photos.n3 img:first-child { grid-row: 1 / span 2; }
+.photos.n4 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.copy {
+  min-height: 0;
+  overflow: hidden;
+}
+.copy p { margin-bottom: 0.35em; }
+.copy .what { font-family: Fraunces, serif; font-size: 14.5px; line-height: 1.3; }
+.copy .note { color: var(--muted); font-size: 12px; }
+.locator {
+  background: #152028;
+}
+.locator img {
+  width: 100%;
+  height: 20vh;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+.locator figcaption {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.foot {
+  padding: 28px 6vw 40px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 1100px) {
+  .spread { grid-template-columns: 1fr; height: auto; overflow: visible; }
+  .card { height: auto; overflow: visible; border-right: none; border-bottom: 1px solid var(--line); grid-template-rows: auto 42vh auto auto; }
+  .locator img { height: 24vh; }
+}
+</style>
+</head>
+<body>
+<header class="cover">
+  <div>
+    <p class="kicker">Испания Север · 50 мест</p>
+    <h1>Берег, <em>запад → восток</em></h1>
+    <p class="lede">От Cíes до Hondarribia. Три карточки на экран. Красная точка — где это на всём берегу.</p>
+    <nav class="index">
+      <a href="#cies">Islas Cíes</a><a href="#razo">Razo</a><a href="#combarro">Combarro</a><a href="#santiago">Santiago de Compostela</a><a href="#hercules">Torre de Hércules</a><a href="#pantin">Pantín</a><a href="#ortegal">Cabo Ortegal</a><a href="#catedrais">Praia das Catedrais</a><a href="#tapia">Tapia de Casariego</a><a href="#frejulfe">Frejulfe</a><a href="#luarca">Luarca</a><a href="#cudillero">Cudillero</a><a href="#salinas">Salinas</a><a href="#penas">Cabo Peñas</a><a href="#rodiles">Rodiles</a><a href="#peridiella">Senda de la Peridiella</a><a href="#lastres">Lastres</a><a href="#la_griega">Playa de La Griega</a><a href="#cuevona">La Cuevona</a><a href="#ribadesella">Ribadesella</a><a href="#covadonga">Lagos de Covadonga</a><a href="#gulpiyuri">Gulpiyuri</a><a href="#san_antolin">San Antolín</a><a href="#bufones">Bufones de Pría</a><a href="#fuente_de">Fuente Dé</a><a href="#palombina">Playa de Palombina</a><a href="#llanes">Llanes</a><a href="#torimbia">Playa de Torimbia</a><a href="#san_vicente">San Vicente de la Barquera</a><a href="#oyambre">Oyambre</a><a href="#comillas">Comillas</a><a href="#altamira">Altamira (Neocueva)</a><a href="#santillana">Santillana del Mar</a><a href="#liencres">Dunas de Liencres</a><a href="#cabarceno">Parque de la Naturaleza de Cabárceno</a><a href="#somo">Somo</a><a href="#loredo">Loredo</a><a href="#sopelana">Sopelana</a><a href="#guggenheim">Guggenheim Bilbao</a><a href="#gaztelugatxe">San Juan de Gaztelugatxe</a><a href="#mundaka">Mundaka (смотреть)</a><a href="#lekeitio">Lekeitio</a><a href="#flysch">Flysch Zumaia (Itzurun)</a><a href="#getaria">Getaria</a><a href="#zarautz">Zarautz</a><a href="#concha">Playa de La Concha</a><a href="#donostia">San Sebastián</a><a href="#zurriola">Zurriola</a><a href="#pasai">Pasai Donibane</a><a href="#hondarribia">Hondarribia</a>
+    </nav>
+  </div>
+  <p class="kicker">скролл вниз</p>
+</header>
+<section class="spread">
+<article class="card" id="cies">
+  <header>
+    <p class="meta"><span class="p">P1</span> Природа · Галисия · весь день</p>
+    <h2>Islas Cíes</h2>
+  </header>
+  <div class="photos n4"><img src="photos/cies/1.jpg" alt="Islas Cíes" loading="lazy"><img src="photos/cies/2.jpg" alt="Islas Cíes" loading="lazy"><img src="photos/cies/3.jpg" alt="Islas Cíes" loading="lazy"><img src="photos/cies/4.jpg" alt="Islas Cíes" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Острова нацпарка у Vigo. Белая дуга Praia de Rodas, сосны, тропы без машин.</p>
+    <p><b>Что делать.</b> Разрешение Xunta + паром из Vigo/Cangas. Короткий хайк к смотровой, пляж, обратно тем же паромом.</p>
+    <p class="note">Только если старт с юга Галисии (Порту/Vigo). С северной трассы SCQ→восток — большой крюк. С двухлеткой реально, если попасть в расписание парома и дневной сон.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/cies.jpg" alt="Где на берегу: Islas Cíes">
+    <figcaption>Север Испании · красная точка — Islas Cíes</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="razo">
+  <header>
+    <p class="meta"><span class="p">P2</span> Сёрф · Галисия · 3–4 ч</p>
+    <h2>Razo</h2>
+  </header>
+  <div class="photos n3"><img src="photos/razo/1.jpg" alt="Razo" loading="lazy"><img src="photos/razo/2.jpg" alt="Razo" loading="lazy"><img src="photos/razo/3.jpg" alt="Razo" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Длинный песчаный пляж у Carballo. Правые и левые в зависимости от бара.</p>
+    <p><b>Что делать.</b> Прокат летом на пляже. Запасной спот, если Pantín не подходит по ветру/размеру.</p>
+    <p class="note">Инфраструктуры меньше, чем в Pantín.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/razo.jpg" alt="Где на берегу: Razo">
+    <figcaption>Север Испании · красная точка — Razo</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="combarro">
+  <header>
+    <p class="meta"><span class="p">P2</span> Город · Галисия · 1–1,5 ч</p>
+    <h2>Combarro</h2>
+  </header>
+  <div class="photos n4"><img src="photos/combarro/1.jpg" alt="Combarro" loading="lazy"><img src="photos/combarro/2.jpg" alt="Combarro" loading="lazy"><img src="photos/combarro/3.jpg" alt="Combarro" loading="lazy"><img src="photos/combarro/4.jpg" alt="Combarro" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Рыбацкий посёлок в Rías Baixas: каменные hórreos прямо у воды.</p>
+    <p><b>Что делать.</b> Прогулка по набережной, фото, кофе. Не ночёвка.</p>
+    <p class="note">Юг Галисии, имеет смысл только вместе с Cíes / Порту, не с северной трассой на Астурию.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/combarro.jpg" alt="Где на берегу: Combarro">
+    <figcaption>Север Испании · красная точка — Combarro</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="santiago">
+  <header>
+    <p class="meta"><span class="p">P2</span> Другое · Галисия · 2–3 ч</p>
+    <h2>Santiago de Compostela</h2>
+  </header>
+  <div class="photos n4"><img src="photos/santiago/1.jpg" alt="Santiago de Compostela" loading="lazy"><img src="photos/santiago/2.jpg" alt="Santiago de Compostela" loading="lazy"><img src="photos/santiago/3.jpg" alt="Santiago de Compostela" loading="lazy"><img src="photos/santiago/4.jpg" alt="Santiago de Compostela" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Собор и старый город. Имеет смысл, если прилёт SCQ, не как цель береговой поездки.</p>
+    <p><b>Что делать.</b> Площадь Obradoiro, короткая прогулка, ехать к берегу.</p>
+    <p class="note">Не вставлять в середину маршрута Астурия–Баски.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/santiago.jpg" alt="Где на берегу: Santiago de Compostela">
+    <figcaption>Север Испании · красная точка — Santiago de Compostela</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="hercules">
+  <header>
+    <p class="meta"><span class="p">P2</span> Другое · Галисия · 1 ч</p>
+    <h2>Torre de Hércules</h2>
+  </header>
+  <div class="photos n3"><img src="photos/hercules/1.jpg" alt="Torre de Hércules" loading="lazy"><img src="photos/hercules/2.jpg" alt="Torre de Hércules" loading="lazy"><img src="photos/hercules/3.jpg" alt="Torre de Hércules" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Римский маяк, всё ещё работает. A Coruña.</p>
+    <p><b>Что делать.</b> Смотровая у башни, коротко. Внутри — по желанию.</p>
+    <p class="note">Только если ночуете / летите через A Coruña.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/hercules.jpg" alt="Где на берегу: Torre de Hércules">
+    <figcaption>Север Испании · красная точка — Torre de Hércules</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="pantin">
+  <header>
+    <p class="meta"><span class="p">P1</span> Сёрф · Галисия · 3–4 ч</p>
+    <h2>Pantín</h2>
+  </header>
+  <div class="photos n3"><img src="photos/pantin/1.jpg" alt="Pantín" loading="lazy"><img src="photos/pantin/2.jpg" alt="Pantín" loading="lazy"><img src="photos/pantin/3.jpg" alt="Pantín" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Главный сёрф-пляж северной Галисии. Длинная дуга, песчаный брейк, здесь проходит Pantín Classic.</p>
+    <p><b>Что делать.</b> Аренда и школа на пляже (Alawa, Laola в Valdoviño рядом). Сессия + второй взрослый с ребёнком на песке.</p>
+    <p class="note">Волна мощнее, чем Somo. Летом на маленькой воде — средний уровень; осенью может быть уже серьёзно.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/pantin.jpg" alt="Где на берегу: Pantín">
+    <figcaption>Север Испании · красная точка — Pantín</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="ortegal">
+  <header>
+    <p class="meta"><span class="p">P2</span> Природа · Галисия · 1–1,5 ч</p>
+    <h2>Cabo Ortegal</h2>
+  </header>
+  <div class="photos n3"><img src="photos/ortegal/1.jpg" alt="Cabo Ortegal" loading="lazy"><img src="photos/ortegal/2.jpg" alt="Cabo Ortegal" loading="lazy"><img src="photos/ortegal/3.jpg" alt="Cabo Ortegal" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Мыс, где Бискай встречается с Атлантикой. Одни из самых высоких клифов Европы рядом (Herbeira).</p>
+    <p><b>Что делать.</b> Доехать, смотровая, коротко по тропе у маяка. Не хайк.</p>
+    <p class="note">Ветер. Держать ребёнка. Имеет смысл по пути вдоль северной Галисии, не отдельным днём.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/ortegal.jpg" alt="Где на берегу: Cabo Ortegal">
+    <figcaption>Север Испании · красная точка — Cabo Ortegal</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="catedrais">
+  <header>
+    <p class="meta"><span class="p">P1</span> Природа · Галисия · 2 ч у отлива</p>
+    <h2>Praia das Catedrais</h2>
+  </header>
+  <div class="photos n4"><img src="photos/catedrais/1.jpg" alt="Praia das Catedrais" loading="lazy"><img src="photos/catedrais/2.jpg" alt="Praia das Catedrais" loading="lazy"><img src="photos/catedrais/3.jpg" alt="Praia das Catedrais" loading="lazy"><img src="photos/catedrais/4.jpg" alt="Praia das Catedrais" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Скальные арки как контрфорсы собора. Видны только в отлив; в прилив пляжа почти нет.</p>
+    <p><b>Что делать.</b> Приехать за ~2 ч до low tide. Спуск по лестнице на песок, пройти под арками, уйти до прилива.</p>
+    <p class="note">Пасха и 1 июля–30 сентября — бесплатный пермит на ascatedrais.xunta.gal. Лестница мокрая, с коляской никак. Не задерживаться: вода приходит быстро.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/catedrais.jpg" alt="Где на берегу: Praia das Catedrais">
+    <figcaption>Север Испании · красная точка — Praia das Catedrais</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="tapia">
+  <header>
+    <p class="meta"><span class="p">P2</span> Сёрф · Астурия · 3–4 ч</p>
+    <h2>Tapia de Casariego</h2>
+  </header>
+  <div class="photos n4"><img src="photos/tapia/1.jpg" alt="Tapia de Casariego" loading="lazy"><img src="photos/tapia/2.jpg" alt="Tapia de Casariego" loading="lazy"><img src="photos/tapia/3.jpg" alt="Tapia de Casariego" loading="lazy"><img src="photos/tapia/4.jpg" alt="Tapia de Casariego" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Западная Астурия, граница с Галисией. Несколько пляжей вокруг посёлка, школы на месте.</p>
+    <p><b>Что делать.</b> Прокат в посёлке, сессия, прогулка по порту.</p>
+    <p class="note">Удобная точка, если едете вдоль берега C→B.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/tapia.jpg" alt="Где на берегу: Tapia de Casariego">
+    <figcaption>Север Испании · красная точка — Tapia de Casariego</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="frejulfe">
+  <header>
+    <p class="meta"><span class="p">P2</span> Сёрф · Астурия · 3–4 ч</p>
+    <h2>Frejulfe</h2>
+  </header>
+  <div class="photos n4"><img src="photos/frejulfe/1.jpg" alt="Frejulfe" loading="lazy"><img src="photos/frejulfe/2.jpg" alt="Frejulfe" loading="lazy"><img src="photos/frejulfe/3.jpg" alt="Frejulfe" loading="lazy"><img src="photos/frejulfe/4.jpg" alt="Frejulfe" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Дикий пляж у Navia. Пустее Salinas, волна читаемая для тех, кто уже не новичок.</p>
+    <p><b>Что делать.</b> Есть школа (Fre Surf). Не первый спот поездки — если уже в западной Астурии.</p>
+    <p class="note">Меньше проката и людей, чем в Salinas / Llanes.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/frejulfe.jpg" alt="Где на берегу: Frejulfe">
+    <figcaption>Север Испании · красная точка — Frejulfe</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="luarca">
+  <header>
+    <p class="meta"><span class="p">P2</span> Город · Астурия · 2 ч</p>
+    <h2>Luarca</h2>
+  </header>
+  <div class="photos n4"><img src="photos/luarca/1.jpg" alt="Luarca" loading="lazy"><img src="photos/luarca/2.jpg" alt="Luarca" loading="lazy"><img src="photos/luarca/3.jpg" alt="Luarca" loading="lazy"><img src="photos/luarca/4.jpg" alt="Luarca" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Белый порт западной Астурии, кладбище на клифе, меньше туристов, чем Cudillero.</p>
+    <p><b>Что делать.</b> Порт, вид с кладбища, рыба. Спокойнее Cudillero.</p>
+    <p class="note">Если едете западной Астурией. Если база у Llanes — далеко.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/luarca.jpg" alt="Где на берегу: Luarca">
+    <figcaption>Север Испании · красная точка — Luarca</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="cudillero">
+  <header>
+    <p class="meta"><span class="p">P1</span> Город · Астурия · 2 ч</p>
+    <h2>Cudillero</h2>
+  </header>
+  <div class="photos n4"><img src="photos/cudillero/1.jpg" alt="Cudillero" loading="lazy"><img src="photos/cudillero/2.jpg" alt="Cudillero" loading="lazy"><img src="photos/cudillero/3.jpg" alt="Cudillero" loading="lazy"><img src="photos/cudillero/4.jpg" alt="Cudillero" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Амфитеатр цветных домов над крошечным портом. Самая «открыточная» деревня Астурии.</p>
+    <p><b>Что делать.</b> Спуск к порту, рыба, вид сверху. Улицы крутые.</p>
+    <p class="note">Коляска мучение. Людно в сезон после 12. Лучше утро или ранний вечер.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/cudillero.jpg" alt="Где на берегу: Cudillero">
+    <figcaption>Север Испании · красная точка — Cudillero</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="salinas">
+  <header>
+    <p class="meta"><span class="p">P1</span> Сёрф · Астурия · 3–4 ч</p>
+    <h2>Salinas</h2>
+  </header>
+  <div class="photos n4"><img src="photos/salinas/1.jpg" alt="Salinas" loading="lazy"><img src="photos/salinas/2.jpg" alt="Salinas" loading="lazy"><img src="photos/salinas/3.jpg" alt="Salinas" loading="lazy"><img src="photos/salinas/4.jpg" alt="Salinas" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Большая полулунная бухта, песок, работает часто. 10 минут от аэропорта Овьедо (OVD).</p>
+    <p><b>Что делать.</b> Несколько школ и прокат на пляже (Salinas Surf Camp, Family Surfers). Якорный спот, если база у Avilés/Gijón.</p>
+    <p class="note">Лучший баланс «средний уровень + прокат + ребёнок на пляже» в Астурии.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/salinas.jpg" alt="Где на берегу: Salinas">
+    <figcaption>Север Испании · красная точка — Salinas</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="penas">
+  <header>
+    <p class="meta"><span class="p">P3</span> Природа · Астурия · 45–60 мин</p>
+    <h2>Cabo Peñas</h2>
+  </header>
+  <div class="photos n4"><img src="photos/penas/1.jpg" alt="Cabo Peñas" loading="lazy"><img src="photos/penas/2.jpg" alt="Cabo Peñas" loading="lazy"><img src="photos/penas/3.jpg" alt="Cabo Peñas" loading="lazy"><img src="photos/penas/4.jpg" alt="Cabo Peñas" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Самая северная точка Астурии, маяк, клифы.</p>
+    <p><b>Что делать.</b> Смотровая у маяка, если едете мимо Salinas/Gijón.</p>
+    <p class="note">Не цель дня.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/penas.jpg" alt="Где на берегу: Cabo Peñas">
+    <figcaption>Север Испании · красная точка — Cabo Peñas</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="rodiles">
+  <header>
+    <p class="meta"><span class="p">P2</span> Сёрф · Астурия · 3–4 ч</p>
+    <h2>Rodiles</h2>
+  </header>
+  <div class="photos n2"><img src="photos/rodiles/1.jpg" alt="Rodiles" loading="lazy"><img src="photos/rodiles/2.jpg" alt="Rodiles" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Устье у Villaviciosa. Качественный левый, один из лучших в Астурии, когда работает.</p>
+    <p><b>Что делать.</b> Есть школа. Серфить на средней воде в спокойный день. На большой воде — уже не «средний спот».</p>
+    <p class="note">Красиво для семьи (эстуарий, сосны). Волна может быть полой — смотреть по размеру.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/rodiles.jpg" alt="Где на берегу: Rodiles">
+    <figcaption>Север Испании · красная точка — Rodiles</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="peridiella">
+  <header>
+    <p class="meta"><span class="p">P2</span> Природа · Астурия · 1,5–2 ч куска</p>
+    <h2>Senda de la Peridiella</h2>
+  </header>
+  <div class="photos n0"></div>
+  <div class="copy">
+    <p class="what">Лесная тропа у Piloña/Infiesto: ручей, фигурки xanas и гномов в деревьях. Кусок можно с коляской.</p>
+    <p><b>Что делать.</b> Пройти часть туда-обратно, не все 8 км. Дождливый план Б вместо клифов.</p>
+    <p class="note">Старт у зоны La Marea — пин в Infiesto, на месте уточнить парковку. Это не «вау-вид», это спокойный лес с ребёнком.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/peridiella.jpg" alt="Где на берегу: Senda de la Peridiella">
+    <figcaption>Север Испании · красная точка — Senda de la Peridiella</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="lastres">
+  <header>
+    <p class="meta"><span class="p">P2</span> Город · Астурия · 1,5 ч</p>
+    <h2>Lastres</h2>
+  </header>
+  <div class="photos n4"><img src="photos/lastres/1.jpg" alt="Lastres" loading="lazy"><img src="photos/lastres/2.jpg" alt="Lastres" loading="lazy"><img src="photos/lastres/3.jpg" alt="Lastres" loading="lazy"><img src="photos/lastres/4.jpg" alt="Lastres" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Деревня на склоне, вид на море и Picos. Рядом пляж La Griega (следы динозавров).</p>
+    <p><b>Что делать.</b> Прогулка, вид, кофе. Не обе обязательные деревни вместе с Cudillero в один день.</p>
+    <p class="note">Крутой рельеф.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/lastres.jpg" alt="Где на берегу: Lastres">
+    <figcaption>Север Испании · красная точка — Lastres</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="la_griega">
+  <header>
+    <p class="meta"><span class="p">P3</span> Другое · Астурия · 45–60 мин</p>
+    <h2>Playa de La Griega</h2>
+  </header>
+  <div class="photos n0"></div>
+  <div class="copy">
+    <p class="what">Пляж у Colunga со следами динозавров на плите.</p>
+    <p><b>Что делать.</b> Найти следы у скал (указатели), 20 мин. Lastres рядом.</p>
+    <p class="note">Забавно с ребёнком по пути, не ехать специально через весь регион.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/la_griega.jpg" alt="Где на берегу: Playa de La Griega">
+    <figcaption>Север Испании · красная точка — Playa de La Griega</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="cuevona">
+  <header>
+    <p class="meta"><span class="p">P3</span> Другое · Астурия · 45 мин</p>
+    <h2>La Cuevona</h2>
+  </header>
+  <div class="photos n1"><img src="photos/cuevona/1.jpg" alt="La Cuevona" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Дорога в деревню Cuevas del Agua идёт через огромную пещеру.</p>
+    <p><b>Что делать.</b> Проехать, остановиться, выйти. Рядом Ribadesella.</p>
+    <p class="note">Забавно с ребёнком, не достопримечательность. Узко, не на автодоме-мастодонте вслепую — сначала посмотреть габарит.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/cuevona.jpg" alt="Где на берегу: La Cuevona">
+    <figcaption>Север Испании · красная точка — La Cuevona</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="ribadesella">
+  <header>
+    <p class="meta"><span class="p">P2</span> Город · Астурия · 2–3 ч / база</p>
+    <h2>Ribadesella</h2>
+  </header>
+  <div class="photos n4"><img src="photos/ribadesella/1.jpg" alt="Ribadesella" loading="lazy"><img src="photos/ribadesella/2.jpg" alt="Ribadesella" loading="lazy"><img src="photos/ribadesella/3.jpg" alt="Ribadesella" loading="lazy"><img src="photos/ribadesella/4.jpg" alt="Ribadesella" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Устье Sella, пляж Santa Marina, нормальный городок а не только открытка. Хорошая база восточной Астурии.</p>
+    <p><b>Что делать.</b> Набережная, пляж с ребёнком, ужин. Отсюда San Antolín, Bufones, Llanes, Cuevona.</p>
+    <p class="note">Сильнее как якорь ночёвки, чем как «достопримечательность на час».</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/ribadesella.jpg" alt="Где на берегу: Ribadesella">
+    <figcaption>Север Испании · красная точка — Ribadesella</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="covadonga">
+  <header>
+    <p class="meta"><span class="p">P1</span> Природа · Астурия · полдня</p>
+    <h2>Lagos de Covadonga</h2>
+  </header>
+  <div class="photos n4"><img src="photos/covadonga/1.jpg" alt="Lagos de Covadonga" loading="lazy"><img src="photos/covadonga/2.jpg" alt="Lagos de Covadonga" loading="lazy"><img src="photos/covadonga/3.jpg" alt="Lagos de Covadonga" loading="lazy"><img src="photos/covadonga/4.jpg" alt="Lagos de Covadonga" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Ледниковые озёра Enol и Ercina в Picos de Europa. Главный природный «вау» Астурии без тяжёлого трека.</p>
+    <p><b>Что делать.</b> Короткий круг между озёрами (~6 км можно резать). Святилище Covadonga — по пути, 30–45 мин.</p>
+    <p class="note">Летом часто шаттл с El Repelao, частные машины ограничивают. Коляска по камням плохая, переноска да. Не путать с Ruta del Cares — тот на весь день и с двухлеткой не надо.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/covadonga.jpg" alt="Где на берегу: Lagos de Covadonga">
+    <figcaption>Север Испании · красная точка — Lagos de Covadonga</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="gulpiyuri">
+  <header>
+    <p class="meta"><span class="p">P2</span> Природа · Астурия · 30–45 мин</p>
+    <h2>Gulpiyuri</h2>
+  </header>
+  <div class="photos n1"><img src="photos/gulpiyuri/1.jpg" alt="Gulpiyuri" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Крошечный пляж в воронке в 100 м от моря: вода приходит под землёй.</p>
+    <p><b>Что делать.</b> Дойти, посмотреть, уйти. Купаться особо негде.</p>
+    <p class="note">Людно, это curiosidad на 20 минут, не природа на полдня. Рядом с Bufones — не два отдельных выезда.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/gulpiyuri.jpg" alt="Где на берегу: Gulpiyuri">
+    <figcaption>Север Испании · красная точка — Gulpiyuri</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="san_antolin">
+  <header>
+    <p class="meta"><span class="p">P1</span> Сёрф · Астурия · 3–4 ч</p>
+    <h2>San Antolín</h2>
+  </header>
+  <div class="photos n0"></div>
+  <div class="copy">
+    <p class="what">Широкий пляж у Llanes. Школа прямо на песке с 1998 (Llanes Surf Paradise): прокат, душ, парковка.</p>
+    <p><b>Что делать.</b> Сессия + рядом Bufones / Gulpiyuri / Llanes в тот же день не надо — хватит пляжа.</p>
+    <p class="note">Якорь восточной Астурии. С ребёнком удобнее, чем «дикие» пляжи без проката.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/san_antolin.jpg" alt="Где на берегу: San Antolín">
+    <figcaption>Север Испании · красная точка — San Antolín</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="bufones">
+  <header>
+    <p class="meta"><span class="p">P1</span> Природа · Астурия · 45–90 мин</p>
+    <h2>Bufones de Pría</h2>
+  </header>
+  <div class="photos n4"><img src="photos/bufones/1.jpg" alt="Bufones de Pría" loading="lazy"><img src="photos/bufones/2.jpg" alt="Bufones de Pría" loading="lazy"><img src="photos/bufones/3.jpg" alt="Bufones de Pría" loading="lazy"><img src="photos/bufones/4.jpg" alt="Bufones de Pría" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Карстовые продухи в клифе: при волне бьют фонтаны. Короткий выход у Llames, рядом с San Antolín.</p>
+    <p><b>Что делать.</b> Прогулка по краю, смотреть брызги. Лучше в шторм/прилив, в штиль слабее.</p>
+    <p class="note">Обрывы без забора. Ребёнка за руку. Не сёрф-день: это 1 час до или после пляжа.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/bufones.jpg" alt="Где на берегу: Bufones de Pría">
+    <figcaption>Север Испании · красная точка — Bufones de Pría</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="fuente_de">
+  <header>
+    <p class="meta"><span class="p">P2</span> Природа · Кантабрия · полдня</p>
+    <h2>Fuente Dé</h2>
+  </header>
+  <div class="photos n4"><img src="photos/fuente_de/1.jpg" alt="Fuente Dé" loading="lazy"><img src="photos/fuente_de/2.jpg" alt="Fuente Dé" loading="lazy"><img src="photos/fuente_de/3.jpg" alt="Fuente Dé" loading="lazy"><img src="photos/fuente_de/4.jpg" alt="Fuente Dé" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Кабелькар на плато Picos: набор высоты без ходьбы. Вид, короткий выход наверху.</p>
+    <p><b>Что делать.</b> Подъём, 20–40 мин по плато, вниз. Potes по пути — обед.</p>
+    <p class="note">Очереди в сезон. С двухлеткой кабелькар — как раз формат. Не уходить далеко от верхней станции.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/fuente_de.jpg" alt="Где на берегу: Fuente Dé">
+    <figcaption>Север Испании · красная точка — Fuente Dé</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="palombina">
+  <header>
+    <p class="meta"><span class="p">P2</span> Другое · Астурия · 2–3 ч</p>
+    <h2>Playa de Palombina</h2>
+  </header>
+  <div class="photos n4"><img src="photos/palombina/1.jpg" alt="Playa de Palombina" loading="lazy"><img src="photos/palombina/2.jpg" alt="Playa de Palombina" loading="lazy"><img src="photos/palombina/3.jpg" alt="Playa de Palombina" loading="lazy"><img src="photos/palombina/4.jpg" alt="Playa de Palombina" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Городской пляж Llanes: мельче и спокойнее сёрф-спотов, рядом парковка и набережная.</p>
+    <p><b>Что делать.</b> Дневной сон / ведро-формочки, пока второй не в воде на San Antolín.</p>
+    <p class="note">Это быт с ребёнком, не «место увидеть». В шторм любой кантабрийский пляж не детский.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/palombina.jpg" alt="Где на берегу: Playa de Palombina">
+    <figcaption>Север Испании · красная точка — Playa de Palombina</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="llanes">
+  <header>
+    <p class="meta"><span class="p">P1</span> Город · Астурия · 2–3 ч / база</p>
+    <h2>Llanes</h2>
+  </header>
+  <div class="photos n4"><img src="photos/llanes/1.jpg" alt="Llanes" loading="lazy"><img src="photos/llanes/2.jpg" alt="Llanes" loading="lazy"><img src="photos/llanes/3.jpg" alt="Llanes" loading="lazy"><img src="photos/llanes/4.jpg" alt="Llanes" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Стенки старого города, несколько городских пляжей, еда, рядом сёрф и клифы.</p>
+    <p><b>Что делать.</b> Гулять вечером, пляж Palombina днём, отсюда радиус на природу.</p>
+    <p class="note">Один из лучших якорей всего берега под ваш бриф.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/llanes.jpg" alt="Где на берегу: Llanes">
+    <figcaption>Север Испании · красная точка — Llanes</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="torimbia">
+  <header>
+    <p class="meta"><span class="p">P2</span> Природа · Астурия · 2–3 ч</p>
+    <h2>Playa de Torimbia</h2>
+  </header>
+  <div class="photos n4"><img src="photos/torimbia/1.jpg" alt="Playa de Torimbia" loading="lazy"><img src="photos/torimbia/2.jpg" alt="Playa de Torimbia" loading="lazy"><img src="photos/torimbia/3.jpg" alt="Playa de Torimbia" loading="lazy"><img src="photos/torimbia/4.jpg" alt="Playa de Torimbia" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Одна из самых красивых бухт восточной Астурии. Спуск пешком от Niembro.</p>
+    <p><b>Что делать.</b> Короткий хайк вниз, побыть на песке, подняться. Часть пляжа нудистская — дальняя.</p>
+    <p class="note">Спуск/подъём с двухлеткой в переноске. Не в дождь (скользко).</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/torimbia.jpg" alt="Где на берегу: Playa de Torimbia">
+    <figcaption>Север Испании · красная точка — Playa de Torimbia</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="san_vicente">
+  <header>
+    <p class="meta"><span class="p">P1</span> Город · Кантабрия · 2 ч</p>
+    <h2>San Vicente de la Barquera</h2>
+  </header>
+  <div class="photos n4"><img src="photos/san_vicente/1.jpg" alt="San Vicente de la Barquera" loading="lazy"><img src="photos/san_vicente/2.jpg" alt="San Vicente de la Barquera" loading="lazy"><img src="photos/san_vicente/3.jpg" alt="San Vicente de la Barquera" loading="lazy"><img src="photos/san_vicente/4.jpg" alt="San Vicente de la Barquera" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Эстуарий, замок, мосты, Picos на фоне. Море + горы в одном кадре.</p>
+    <p><b>Что делать.</b> Порт, вид с моста, пляж. Oyambre и Comillas рядом.</p>
+    <p class="note">Сильный якорь западной Кантабрии.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/san_vicente.jpg" alt="Где на берегу: San Vicente de la Barquera">
+    <figcaption>Север Испании · красная точка — San Vicente de la Barquera</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="oyambre">
+  <header>
+    <p class="meta"><span class="p">P2</span> Сёрф · Кантабрия · 3–4 ч</p>
+    <h2>Oyambre</h2>
+  </header>
+  <div class="photos n1"><img src="photos/oyambre/1.jpg" alt="Oyambre" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Пляж в природном парке между Comillas и San Vicente. Дюны, эстуарий, вид на Picos.</p>
+    <p><b>Что делать.</b> Сёрф в хорошую воду + прогулка. Прокат чаще в San Vicente / Comillas, не всегда на песке.</p>
+    <p class="note">Красивее, чем «удобнее». Для сессии с гарантированным прокатом надёжнее Somo или San Antolín.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/oyambre.jpg" alt="Где на берегу: Oyambre">
+    <figcaption>Север Испании · красная точка — Oyambre</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="comillas">
+  <header>
+    <p class="meta"><span class="p">P2</span> Город · Кантабрия · 2 ч</p>
+    <h2>Comillas</h2>
+  </header>
+  <div class="photos n4"><img src="photos/comillas/1.jpg" alt="Comillas" loading="lazy"><img src="photos/comillas/2.jpg" alt="Comillas" loading="lazy"><img src="photos/comillas/3.jpg" alt="Comillas" loading="lazy"><img src="photos/comillas/4.jpg" alt="Comillas" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Курорт indianos: El Capricho Гауди, дворец Sobrellano, пляж.</p>
+    <p><b>Что делать.</b> Capricho снаружи или внутри (билет), прогулка, не полный музейный день.</p>
+    <p class="note">Рядом с San Vicente — не два полных дня.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/comillas.jpg" alt="Где на берегу: Comillas">
+    <figcaption>Север Испании · красная точка — Comillas</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="altamira">
+  <header>
+    <p class="meta"><span class="p">P2</span> Другое · Кантабрия · 1,5 ч</p>
+    <h2>Altamira (Neocueva)</h2>
+  </header>
+  <div class="photos n4"><img src="photos/altamira/1.jpg" alt="Altamira (Neocueva)" loading="lazy"><img src="photos/altamira/2.jpg" alt="Altamira (Neocueva)" loading="lazy"><img src="photos/altamira/3.jpg" alt="Altamira (Neocueva)" loading="lazy"><img src="photos/altamira/4.jpg" alt="Altamira (Neocueva)" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Реплика пещеры с бизонами + музей. Оригинал почти закрыт.</p>
+    <p><b>Что делать.</b> Neocueva, не ждать оригинал. Рядом Santillana.</p>
+    <p class="note">Хороший дождливый слот. С двухлеткой коротко: бизоны заходят, музей целиком нет.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/altamira.jpg" alt="Где на берегу: Altamira (Neocueva)">
+    <figcaption>Север Испании · красная точка — Altamira (Neocueva)</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="santillana">
+  <header>
+    <p class="meta"><span class="p">P2</span> Город · Кантабрия · 1,5 ч</p>
+    <h2>Santillana del Mar</h2>
+  </header>
+  <div class="photos n4"><img src="photos/santillana/1.jpg" alt="Santillana del Mar" loading="lazy"><img src="photos/santillana/2.jpg" alt="Santillana del Mar" loading="lazy"><img src="photos/santillana/3.jpg" alt="Santillana del Mar" loading="lazy"><img src="photos/santillana/4.jpg" alt="Santillana del Mar" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Средневековый камень, очень туристический. Рядом музей Альтамиры.</p>
+    <p><b>Что делать.</b> 30–40 мин по улицам + Neocueva, либо одно из двух.</p>
+    <p class="note">Море далеко, несмотря на название. Имеет смысл пакетом с Альтамирой в дождь.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/santillana.jpg" alt="Где на берегу: Santillana del Mar">
+    <figcaption>Север Испании · красная точка — Santillana del Mar</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="liencres">
+  <header>
+    <p class="meta"><span class="p">P2</span> Природа · Кантабрия · 1,5–2 ч</p>
+    <h2>Dunas de Liencres</h2>
+  </header>
+  <div class="photos n1"><img src="photos/liencres/1.jpg" alt="Dunas de Liencres" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Самые большие дюны кантабрийского берега, сосны, длинный пляж.</p>
+    <p><b>Что делать.</b> Прогулка по дощатым настилам и дюнам. Можно совместить с Somo в один береговой день.</p>
+    <p class="note">Ветер. Простой выход, если Covadonga уже сделали.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/liencres.jpg" alt="Где на берегу: Dunas de Liencres">
+    <figcaption>Север Испании · красная точка — Dunas de Liencres</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="cabarceno">
+  <header>
+    <p class="meta"><span class="p">P1</span> Другое · Кантабрия · полдня–день</p>
+    <h2>Parque de la Naturaleza de Cabárceno</h2>
+  </header>
+  <div class="photos n4"><img src="photos/cabarceno/1.jpg" alt="Parque de la Naturaleza de Cabárceno" loading="lazy"><img src="photos/cabarceno/2.jpg" alt="Parque de la Naturaleza de Cabárceno" loading="lazy"><img src="photos/cabarceno/3.jpg" alt="Parque de la Naturaleza de Cabárceno" loading="lazy"><img src="photos/cabarceno/4.jpg" alt="Parque de la Naturaleza de Cabárceno" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Бывший карьер: слоны, медведи, жирафы в больших вольерах, ездят на машине между зонами. 15–20 мин от Santander.</p>
+    <p><b>Что делать.</b> Заехать на авто, останавливаться у площадок. Канатная дорога внутри — по желанию.</p>
+    <p class="note">Лучший «детский день» всего берега. Дождь не отменяет. Не природа-хайк.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/cabarceno.jpg" alt="Где на берегу: Parque de la Naturaleza de Cabárceno">
+    <figcaption>Север Испании · красная точка — Parque de la Naturaleza de Cabárceno</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="somo">
+  <header>
+    <p class="meta"><span class="p">P1</span> Сёрф · Кантабрия · 3–4 ч</p>
+    <h2>Somo</h2>
+  </header>
+  <div class="photos n3"><img src="photos/somo/1.jpg" alt="Somo" loading="lazy"><img src="photos/somo/2.jpg" alt="Somo" loading="lazy"><img src="photos/somo/3.jpg" alt="Somo" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">2 км песчаного брейка напротив Santander. Самый мягкий и «школьный» спот всего берега.</p>
+    <p><b>Что делать.</b> Прокат и школы на дюнах. Паром 15 мин из Santander, либо на машине вокруг бухты.</p>
+    <p class="note">Для среднего уровня — inside и пики восточнее. Летом людно, осенью лучше форма.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/somo.jpg" alt="Где на берегу: Somo">
+    <figcaption>Север Испании · красная точка — Somo</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="loredo">
+  <header>
+    <p class="meta"><span class="p">P2</span> Сёрф · Кантабрия · 3–4 ч</p>
+    <h2>Loredo</h2>
+  </header>
+  <div class="photos n0"></div>
+  <div class="copy">
+    <p class="what">Сосед Somo за мысом. Короче, чуть мощнее, у El Brusco есть рифовый кусок для среднего+.</p>
+    <p><b>Что делать.</b> Прокат/кемп Surfbase Loredo. Идти сюда, если Somo мелкий или слишком людно.</p>
+    <p class="note">Тот же кластер, не отдельный день.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/loredo.jpg" alt="Где на берегу: Loredo">
+    <figcaption>Север Испании · красная точка — Loredo</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="sopelana">
+  <header>
+    <p class="meta"><span class="p">P1</span> Сёрф · Баски · 3–4 ч</p>
+    <h2>Sopelana</h2>
+  </header>
+  <div class="photos n1"><img src="photos/sopelana/1.jpg" alt="Sopelana" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Рабочая лошадка баскского берега у Бильбао. Несколько пиков: Arrietara, La Salvaje.</p>
+    <p><b>Что делать.</b> Школы и прокат на пляже. Близко к BIO — первая или последняя сессия поездки.</p>
+    <p class="note">Средний уровень ок. На большой воде Salvaje уже серьёзно.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/sopelana.jpg" alt="Где на берегу: Sopelana">
+    <figcaption>Север Испании · красная точка — Sopelana</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="guggenheim">
+  <header>
+    <p class="meta"><span class="p">P2</span> Другое · Баски · 2 ч</p>
+    <h2>Guggenheim Bilbao</h2>
+  </header>
+  <div class="photos n4"><img src="photos/guggenheim/1.jpg" alt="Guggenheim Bilbao" loading="lazy"><img src="photos/guggenheim/2.jpg" alt="Guggenheim Bilbao" loading="lazy"><img src="photos/guggenheim/3.jpg" alt="Guggenheim Bilbao" loading="lazy"><img src="photos/guggenheim/4.jpg" alt="Guggenheim Bilbao" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Музей и щенок Puppy снаружи. Имеет смысл, если прилёт/вылет BIO или дождь.</p>
+    <p><b>Что делать.</b> Снаружи + щенка достаточно. Внутри — если есть слот и нянька-смена.</p>
+    <p class="note">Не цель поездки. Бильбао не разворачивать в отдельный городской день, если время жмёт.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/guggenheim.jpg" alt="Где на берегу: Guggenheim Bilbao">
+    <figcaption>Север Испании · красная точка — Guggenheim Bilbao</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="gaztelugatxe">
+  <header>
+    <p class="meta"><span class="p">P1</span> Природа · Баски · 2–3 ч если до гермиты; 45 мин смотровая</p>
+    <h2>San Juan de Gaztelugatxe</h2>
+  </header>
+  <div class="photos n4"><img src="photos/gaztelugatxe/1.jpg" alt="San Juan de Gaztelugatxe" loading="lazy"><img src="photos/gaztelugatxe/2.jpg" alt="San Juan de Gaztelugatxe" loading="lazy"><img src="photos/gaztelugatxe/3.jpg" alt="San Juan de Gaztelugatxe" loading="lazy"><img src="photos/gaztelugatxe/4.jpg" alt="San Juan de Gaztelugatxe" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Скала-остров с часовней, каменный мост, ~240 ступеней. Вид с берега уже сильный.</p>
+    <p><b>Что делать.</b> С ребёнком: смотровая у парковки / начало спуска. Полный спуск-подъём — только в переноске и если день спокойный.</p>
+    <p class="note">В пик — бесплатный слот на tiketa.eus. Обратно вверх тяжело. Не совмещать с длинным сёрфом в тот же день.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/gaztelugatxe.jpg" alt="Где на берегу: San Juan de Gaztelugatxe">
+    <figcaption>Север Испании · красная точка — San Juan de Gaztelugatxe</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="mundaka">
+  <header>
+    <p class="meta"><span class="p">P2</span> Другое · Баски · 1 ч</p>
+    <h2>Mundaka (смотреть)</h2>
+  </header>
+  <div class="photos n2"><img src="photos/mundaka/1.jpg" alt="Mundaka (смотреть)" loading="lazy"><img src="photos/mundaka/2.jpg" alt="Mundaka (смотреть)" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Знаменитый левый в устье. Для среднего уровня в воду не лезть: труба, локалы, риф/канал.</p>
+    <p><b>Что делать.</b> Порт, вид на волну, кофе. Рядом Gaztelugatxe.</p>
+    <p class="note">Пин не сёрф. Если волна не работает — всё равно красивый посёлок.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/mundaka.jpg" alt="Где на берегу: Mundaka (смотреть)">
+    <figcaption>Север Испании · красная точка — Mundaka (смотреть)</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="lekeitio">
+  <header>
+    <p class="meta"><span class="p">P2</span> Город · Баски · 2 ч</p>
+    <h2>Lekeitio</h2>
+  </header>
+  <div class="photos n4"><img src="photos/lekeitio/1.jpg" alt="Lekeitio" loading="lazy"><img src="photos/lekeitio/2.jpg" alt="Lekeitio" loading="lazy"><img src="photos/lekeitio/3.jpg" alt="Lekeitio" loading="lazy"><img src="photos/lekeitio/4.jpg" alt="Lekeitio" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Порт и остров San Nicolás: в отлив можно пройти по косе.</p>
+    <p><b>Что делать.</b> Прогулка, остров если отлив, пляж. Между Bilbao и San Sebastián, если едете берегом.</p>
+    <p class="note">Не обязателен, если уже есть Getaria + Donostia.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/lekeitio.jpg" alt="Где на берегу: Lekeitio">
+    <figcaption>Север Испании · красная точка — Lekeitio</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="flysch">
+  <header>
+    <p class="meta"><span class="p">P1</span> Природа · Баски · 1,5–2 ч у отлива</p>
+    <h2>Flysch Zumaia (Itzurun)</h2>
+  </header>
+  <div class="photos n4"><img src="photos/flysch/1.jpg" alt="Flysch Zumaia (Itzurun)" loading="lazy"><img src="photos/flysch/2.jpg" alt="Flysch Zumaia (Itzurun)" loading="lazy"><img src="photos/flysch/3.jpg" alt="Flysch Zumaia (Itzurun)" loading="lazy"><img src="photos/flysch/4.jpg" alt="Flysch Zumaia (Itzurun)" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Слоистые скалы геопарка: миллионы лет в разрезе. Пляж Itzurun + клифы к Deba.</p>
+    <p><b>Что делать.</b> Спуститься на Itzurun в отлив, пройтись вдоль слоёв. Коротко. Getaria рядом.</p>
+    <p class="note">Длинный трек Zumaia–Deba с двухлеткой не надо — только пляж и ближайшие слои.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/flysch.jpg" alt="Где на берегу: Flysch Zumaia (Itzurun)">
+    <figcaption>Север Испании · красная точка — Flysch Zumaia (Itzurun)</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="getaria">
+  <header>
+    <p class="meta"><span class="p">P1</span> Город · Баски · 2 ч</p>
+    <h2>Getaria</h2>
+  </header>
+  <div class="photos n4"><img src="photos/getaria/1.jpg" alt="Getaria" loading="lazy"><img src="photos/getaria/2.jpg" alt="Getaria" loading="lazy"><img src="photos/getaria/3.jpg" alt="Getaria" loading="lazy"><img src="photos/getaria/4.jpg" alt="Getaria" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Мыс-мышь, гриль рыбы на улице, txakoli, Balenciaga родился здесь. 10 мин от Zarautz.</p>
+    <p><b>Что делать.</b> Порт, прогулка на мыс, обед. Flysch в Zumaia — соседний слот, не утро+обед+сёрф.</p>
+    <p class="note">Лучший маленький город басков под еду + вид.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/getaria.jpg" alt="Где на берегу: Getaria">
+    <figcaption>Север Испании · красная точка — Getaria</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="zarautz">
+  <header>
+    <p class="meta"><span class="p">P1</span> Сёрф · Баски · 3–4 ч</p>
+    <h2>Zarautz</h2>
+  </header>
+  <div class="photos n4"><img src="photos/zarautz/1.jpg" alt="Zarautz" loading="lazy"><img src="photos/zarautz/2.jpg" alt="Zarautz" loading="lazy"><img src="photos/zarautz/3.jpg" alt="Zarautz" loading="lazy"><img src="photos/zarautz/4.jpg" alt="Zarautz" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">2,5 км песка, максимум школ и проката на всём берегу. Город сразу за набережной.</p>
+    <p><b>Что делать.</b> Сессия, еда в городе, ребёнок на пляже. Getaria в 10 минутах — не в тот же утренний слот.</p>
+    <p class="note">Летом тесно в воде. Для семьи с прокатом — лучший якорь басков.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/zarautz.jpg" alt="Где на берегу: Zarautz">
+    <figcaption>Север Испании · красная точка — Zarautz</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="concha">
+  <header>
+    <p class="meta"><span class="p">P1</span> Другое · Баски · 2–4 ч</p>
+    <h2>Playa de La Concha</h2>
+  </header>
+  <div class="photos n4"><img src="photos/concha/1.jpg" alt="Playa de La Concha" loading="lazy"><img src="photos/concha/2.jpg" alt="Playa de La Concha" loading="lazy"><img src="photos/concha/3.jpg" alt="Playa de La Concha" loading="lazy"><img src="photos/concha/4.jpg" alt="Playa de La Concha" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Полукруглая городская бухта Donostia. Самый спокойный заход в воду на баскском берегу.</p>
+    <p><b>Что делать.</b> Пляж с ребёнком, променад, мороженое. Сёрф — на Zurriola, не здесь.</p>
+    <p class="note">P1 именно как детский пляж, не как природа.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/concha.jpg" alt="Где на берегу: Playa de La Concha">
+    <figcaption>Север Испании · красная точка — Playa de La Concha</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="donostia">
+  <header>
+    <p class="meta"><span class="p">P1</span> Город · Баски · полдня–день</p>
+    <h2>San Sebastián</h2>
+  </header>
+  <div class="photos n4"><img src="photos/donostia/1.jpg" alt="San Sebastián" loading="lazy"><img src="photos/donostia/2.jpg" alt="San Sebastián" loading="lazy"><img src="photos/donostia/3.jpg" alt="San Sebastián" loading="lazy"><img src="photos/donostia/4.jpg" alt="San Sebastián" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Уже город, но компактный: Concha, Parte Vieja, pintxos, Zurriola. Имеет смысл как база, не как галочка.</p>
+    <p><b>Что делать.</b> Утро на Concha с ребёнком, вечер pintxos (ранний). Monte Igueldo — если есть силы, фуникулёр.</p>
+    <p class="note">Не пытаться «закрыть город» и Gaztelugatxe в один день.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/donostia.jpg" alt="Где на берегу: San Sebastián">
+    <figcaption>Север Испании · красная точка — San Sebastián</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="zurriola">
+  <header>
+    <p class="meta"><span class="p">P2</span> Сёрф · Баски · 3–4 ч</p>
+    <h2>Zurriola</h2>
+  </header>
+  <div class="photos n4"><img src="photos/zurriola/1.jpg" alt="Zurriola" loading="lazy"><img src="photos/zurriola/2.jpg" alt="Zurriola" loading="lazy"><img src="photos/zurriola/3.jpg" alt="Zurriola" loading="lazy"><img src="photos/zurriola/4.jpg" alt="Zurriola" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Городской сёрф-пляж Сан-Себастьяна. Школы на променаде. Gros — барный район сразу за пляжем.</p>
+    <p><b>Что делать.</b> Сессия, если ночуете в Donostia. Ребёнку спокойнее на La Concha, не здесь.</p>
+    <p class="note">Летом мелкий и людный inside; осенью быстрее и теснее. Не единственный спот поездки.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/zurriola.jpg" alt="Где на берегу: Zurriola">
+    <figcaption>Север Испании · красная точка — Zurriola</figcaption>
+  </figure>
+</article>
+</section><section class="spread">
+<article class="card" id="pasai">
+  <header>
+    <p class="meta"><span class="p">P2</span> Город · Баски · 1,5–2 ч</p>
+    <h2>Pasai Donibane</h2>
+  </header>
+  <div class="photos n4"><img src="photos/pasai/1.jpg" alt="Pasai Donibane" loading="lazy"><img src="photos/pasai/2.jpg" alt="Pasai Donibane" loading="lazy"><img src="photos/pasai/3.jpg" alt="Pasai Donibane" loading="lazy"><img src="photos/pasai/4.jpg" alt="Pasai Donibane" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Одна улица рыбацких домов, крошечный паром через устье. 15 мин от Donostia.</p>
+    <p><b>Что делать.</b> Паром, пройти улицу, pintxos, обратно.</p>
+    <p class="note">Формат с ребёнком хороший. Не в дождь на узкой мокрой улице без цели.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/pasai.jpg" alt="Где на берегу: Pasai Donibane">
+    <figcaption>Север Испании · красная точка — Pasai Donibane</figcaption>
+  </figure>
+</article>
+
+<article class="card" id="hondarribia">
+  <header>
+    <p class="meta"><span class="p">P2</span> Город · Баски · 2 ч</p>
+    <h2>Hondarribia</h2>
+  </header>
+  <div class="photos n4"><img src="photos/hondarribia/1.jpg" alt="Hondarribia" loading="lazy"><img src="photos/hondarribia/2.jpg" alt="Hondarribia" loading="lazy"><img src="photos/hondarribia/3.jpg" alt="Hondarribia" loading="lazy"><img src="photos/hondarribia/4.jpg" alt="Hondarribia" loading="lazy"></div>
+  <div class="copy">
+    <p class="what">Стены старого города + цветной рыбацкий квартал. Граница с Францией через устье.</p>
+    <p><b>Что делать.</b> Старый город, Marina, вид на Hendaye.</p>
+    <p class="note">Если база у Donostia и есть вечер. Не ехать ради этого из Кантабрии.</p>
+  </div>
+  <figure class="locator">
+    <img src="maps/hondarribia.jpg" alt="Где на берегу: Hondarribia">
+    <figcaption>Север Испании · красная точка — Hondarribia</figcaption>
+  </figure>
+</article>
+</section>
+<footer class="foot">
+  Фото: Wikimedia Commons. Карта: Esri World Imagery, один кадр на весь берег, пин по координатам.
+</footer>
+</body>
+</html>
