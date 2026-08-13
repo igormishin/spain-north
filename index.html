@@ -577,7 +577,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
 .atlas-shots img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   background: #cfc3ad;
   transition: transform .45s ease;
@@ -666,16 +666,16 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     </div>
     <div class="atlas-head">
       <div class="atlas-nav">
-        <button type="button" id="atlas-prev" aria-label="Предыдущий экран">←</button>
-        <p class="kicker" id="atlas-kicker">1 · BIO · Santander</p>
-        <button type="button" id="atlas-next" aria-label="Следующий экран">→</button>
+        <button type="button" id="atlas-prev" aria-label="Previous map page">←</button>
+        <p class="kicker" id="atlas-kicker">1 · Bilbao Coast</p>
+        <button type="button" id="atlas-next" aria-label="Next map page">→</button>
       </div>
       <div class="atlas-dots" id="atlas-dots"></div>
       <p class="atlas-legend">
-        <span><i class="cat-surf" style="background:var(--surf)"></i>сёрф</span>
-        <span><i class="cat-nature" style="background:var(--nature)"></i>природа</span>
-        <span><i class="cat-town" style="background:var(--town)"></i>город</span>
-        <span><i class="cat-other" style="background:var(--other)"></i>другое</span>
+        <span><i class="cat-surf" style="background:var(--surf)"></i>surf</span>
+        <span><i class="cat-nature" style="background:var(--nature)"></i>nature</span>
+        <span><i class="cat-town" style="background:var(--town)"></i>town</span>
+        <span><i class="cat-other" style="background:var(--other)"></i>other</span>
       </p>
     </div>
   </div>
@@ -2072,7 +2072,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
 </section>
 <footer class="foot">Срез 12 авг 2026. Авиасейлс (часто с багажом) и Google Flights (часто без). Open-jaw: TLL→BIO / MAD→TLL или наоборот, если маршрут линейный.</footer>
 </div>
-<script src="atlas-screens.js?v=11"></script>
+<script src="atlas-screens.js?v=12"></script>
 <script>
 (function () {
   var ids = ["overview", "atlas", "places", "stay", "fly"];
@@ -2098,8 +2098,8 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     if (which === "atlas") atlasShow(atlasI);
   }
 
-  var ATLAS_CAT = { surf: "Сёрф", nature: "Природа", town: "Город", other: "Другое" };
-  var ATLAS_PHOTO_V = "8";
+  var ATLAS_CAT = { surf: "Surf", nature: "Nature", town: "Town", other: "Other" };
+  var ATLAS_PHOTO_V = "9";
   var ATLAS = ATLAS_SCREENS[0];
   var atlasI = 0;
   var atlasBound = false;
@@ -2124,7 +2124,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     var shots = '<div class="atlas-shots n' + n + '">' + imgs + "</div>";
     var body = '<div><p class="meta"><span class="p">P' + p.pri + "</span> " + ATLAS_CAT[p.cat] + "</p><h3>" + p.name + "</h3><p>" + p.what + "</p></div>";
     var inner = p.side === "left" ? shots + body : body + shots;
-    return '<article class="atlas-card cat-' + p.cat + '" data-id="' + p.id + '" data-side="' + p.side + '" data-url="' + (p.url || "") + '" title="Открыть описание">' + inner + "</article>";
+    return '<article class="atlas-card cat-' + p.cat + '" data-id="' + p.id + '" data-side="' + p.side + '" data-url="' + (p.url || "") + '" title="Open details">' + inner + "</article>";
   }
   function atlasBind() {
     if (atlasBound) return;
