@@ -3,9 +3,9 @@ var ATLAS_SCREENS = [
     "kicker": "1 · BIO",
     "map": "maps/zone-1.jpg?v=91",
     "west": -3.096,
-    "south": 42.892,
-    "east": -2.07,
-    "north": 43.824,
+    "south": 43.044,
+    "east": -2.405,
+    "north": 43.672,
     "cities": [
       {
         "name": "Bilbao",
@@ -43,18 +43,6 @@ var ATLAS_SCREENS = [
         "url": "https://www.visitbiscay.eus/en/san-juan-gaztelugatxe"
       },
       {
-        "id": "mundaka",
-        "name": "Mundaka (смотреть)",
-        "cat": "other",
-        "pri": 2,
-        "lat": 43.4072,
-        "lng": -2.6983,
-        "side": "left",
-        "shots": 1,
-        "what": "Знаменитый левый в устье. Для среднего уровня в воду не лезть: труба, локалы, риф/канал.",
-        "url": "https://www.visitbiscay.eus/en/old-town-and-port-of-bermeo"
-      },
-      {
         "id": "sopelana",
         "name": "Sopelana",
         "cat": "surf",
@@ -79,6 +67,30 @@ var ATLAS_SCREENS = [
         "url": "https://www.guggenheim-bilbao.eus/en"
       },
       {
+        "id": "urdaibai",
+        "name": "Urdaibai: Laida + Ekoetxea",
+        "cat": "nature",
+        "pri": 1,
+        "lat": 43.4105,
+        "lng": -2.6826,
+        "side": "right",
+        "shots": 2,
+        "what": "Эстуарий биосферного резервата, спокойный песок Laida и панорама болот, острова Izaro и Mundaka.",
+        "url": "https://turismo.euskadi.eus/en/blog/essential-things-to-do-in-the-urdaibai-biosphere-reserve/webtur00-contfichapost/en/"
+      },
+      {
+        "id": "mundaka",
+        "name": "Mundaka (смотреть)",
+        "cat": "other",
+        "pri": 2,
+        "lat": 43.4072,
+        "lng": -2.6983,
+        "side": "right",
+        "shots": 1,
+        "what": "Знаменитый левый в устье. Для среднего уровня в воду не лезть: труба, локалы, риф/канал.",
+        "url": "https://www.visitbiscay.eus/en/old-town-and-port-of-bermeo"
+      },
+      {
         "id": "lekeitio",
         "name": "Lekeitio",
         "cat": "town",
@@ -89,52 +101,16 @@ var ATLAS_SCREENS = [
         "shots": 1,
         "what": "Порт и остров San Nicolás: в отлив можно пройти по косе.",
         "url": "https://www.visitbiscay.eus/en/historic-centre-of-lekeitio"
-      },
-      {
-        "id": "getaria",
-        "name": "Getaria",
-        "cat": "town",
-        "pri": 1,
-        "lat": 43.3044,
-        "lng": -2.2036,
-        "side": "right",
-        "shots": 2,
-        "what": "Мыс-мышь, гриль рыбы на улице, txakoli, Balenciaga родился здесь. 10 мин от Zarautz.",
-        "url": "https://www.spain.info/en/destination/getaria/"
-      },
-      {
-        "id": "flysch",
-        "name": "Flysch Zumaia (Itzurun)",
-        "cat": "nature",
-        "pri": 1,
-        "lat": 43.3008,
-        "lng": -2.2592,
-        "side": "right",
-        "shots": 2,
-        "what": "Слоистые скалы геопарка: миллионы лет в разрезе. Пляж Itzurun + клифы к Deba.",
-        "url": "https://geoparkea.eus/en/"
-      },
-      {
-        "id": "zarautz",
-        "name": "Zarautz",
-        "cat": "surf",
-        "pri": 1,
-        "lat": 43.2894,
-        "lng": -2.1697,
-        "side": "right",
-        "shots": 2,
-        "what": "2,5 км песка, максимум школ и проката на всём берегу. Город сразу за набережной.",
-        "url": "https://www.spain.info/en/destination/zarautz/"
       }
     ]
   },
   {
     "kicker": "2 · Donostia",
     "map": "maps/zone-2.jpg?v=92",
-    "west": -2.086,
-    "south": 43.161,
+    "west": -2.359,
+    "south": 43.022,
     "east": -1.692,
-    "north": 43.52,
+    "north": 43.629,
     "cities": [
       {
         "name": "Donostia",
@@ -150,20 +126,6 @@ var ATLAS_SCREENS = [
     ],
     "places": [
       {
-        "id": "donostia",
-        "name": "San Sebastián",
-        "cat": "town",
-        "pri": 1,
-        "lat": 43.3228,
-        "lng": -1.9839,
-        "side": "left",
-        "shots": 2,
-        "what": "Уже город, но компактный: Concha, Parte Vieja, pintxos, Zurriola. Имеет смысл как база, не как галочка.",
-        "url": "https://www.spain.info/en/destination/san-sebastian/",
-        "dx": 0.0,
-        "dy": 2.6
-      },
-      {
         "id": "concha",
         "name": "Playa de La Concha",
         "cat": "other",
@@ -176,6 +138,42 @@ var ATLAS_SCREENS = [
         "url": "https://www.sansebastianturismoa.eus/en/to-do/beaches/la-concha",
         "dx": -2.2,
         "dy": 1.4
+      },
+      {
+        "id": "getaria",
+        "name": "Getaria",
+        "cat": "town",
+        "pri": 1,
+        "lat": 43.3044,
+        "lng": -2.2036,
+        "side": "left",
+        "shots": 2,
+        "what": "Мыс-мышь, гриль рыбы на улице, txakoli, Balenciaga родился здесь. 10 мин от Zarautz.",
+        "url": "https://www.spain.info/en/destination/getaria/"
+      },
+      {
+        "id": "flysch",
+        "name": "Flysch Zumaia (Itzurun)",
+        "cat": "nature",
+        "pri": 1,
+        "lat": 43.3008,
+        "lng": -2.2592,
+        "side": "left",
+        "shots": 2,
+        "what": "Слоистые скалы геопарка: миллионы лет в разрезе. Пляж Itzurun + клифы к Deba.",
+        "url": "https://geoparkea.eus/en/"
+      },
+      {
+        "id": "zarautz",
+        "name": "Zarautz",
+        "cat": "surf",
+        "pri": 1,
+        "lat": 43.2894,
+        "lng": -2.1697,
+        "side": "left",
+        "shots": 2,
+        "what": "2,5 км песка, максимум школ и проката на всём берегу. Город сразу за набережной.",
+        "url": "https://www.spain.info/en/destination/zarautz/"
       },
       {
         "id": "hondarribia",
@@ -214,6 +212,20 @@ var ATLAS_SCREENS = [
         "shots": 1,
         "what": "Одна улица рыбацких домов, крошечный паром через устье. 15 мин от Donostia.",
         "url": "https://www.sansebastianturismoa.eus/en/to-do/what-to-see/pasaia"
+      },
+      {
+        "id": "donostia",
+        "name": "San Sebastián",
+        "cat": "town",
+        "pri": 1,
+        "lat": 43.3228,
+        "lng": -1.9839,
+        "side": "right",
+        "shots": 2,
+        "what": "Уже город, но компактный: Concha, Parte Vieja, pintxos, Zurriola. Имеет смысл как база, не как галочка.",
+        "url": "https://www.spain.info/en/destination/san-sebastian/",
+        "dx": 0.0,
+        "dy": 2.6
       }
     ]
   },
@@ -235,15 +247,15 @@ var ATLAS_SCREENS = [
     "places": [
       {
         "id": "liencres",
-        "name": "Dunas de Liencres",
+        "name": "Costa Quebrada: Liencres + Arnía",
         "cat": "nature",
         "pri": 2,
         "lat": 43.4503,
         "lng": -3.9656,
         "side": "left",
         "shots": 1,
-        "what": "Самые большие дюны кантабрийского берега, сосны, длинный пляж.",
-        "url": "https://www.spain.info/en/destination/santander/"
+        "what": "Геопарк ЮНЕСКО: дюны и сосны Liencres плюс скальные пласты, арки и островки Playa de Arnía.",
+        "url": "https://www.unesco.org/en/iggp/costa-quebrada-unesco-global-geopark"
       },
       {
         "id": "santillana",
@@ -337,6 +349,18 @@ var ATLAS_SCREENS = [
     ],
     "places": [
       {
+        "id": "el_soplao",
+        "name": "Cueva El Soplao",
+        "cat": "nature",
+        "pri": 1,
+        "lat": 43.2951,
+        "lng": -4.4314,
+        "side": "left",
+        "shots": 2,
+        "what": "Пещера с необычными кристаллами и горными галереями; к началу маршрута везёт маленький шахтный поезд.",
+        "url": "https://www.elsoplao.es/es/informacion-visita/preguntas-frecuentes"
+      },
+      {
         "id": "covadonga",
         "name": "Lagos de Covadonga",
         "cat": "nature",
@@ -401,10 +425,10 @@ var ATLAS_SCREENS = [
   {
     "kicker": "5 · Llanes",
     "map": "maps/zone-5.jpg?v=95",
-    "west": -5.202,
-    "south": 43.176,
+    "west": -5.16,
+    "south": 43.196,
     "east": -4.62,
-    "north": 43.704,
+    "north": 43.686,
     "cities": [
       {
         "name": "Llanes",
@@ -431,22 +455,10 @@ var ATLAS_SCREENS = [
         "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/ribadesella"
       },
       {
-        "id": "cuevona",
-        "name": "La Cuevona",
-        "cat": "other",
-        "pri": 3,
-        "lat": 43.4594,
-        "lng": -5.1019,
-        "side": "left",
-        "shots": 1,
-        "what": "Дорога в деревню Cuevas del Agua идёт через огромную пещеру.",
-        "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/ribadesella"
-      },
-      {
         "id": "gulpiyuri",
         "name": "Gulpiyuri",
         "cat": "nature",
-        "pri": 2,
+        "pri": 3,
         "lat": 43.4486,
         "lng": -4.885,
         "side": "left",
@@ -503,30 +515,16 @@ var ATLAS_SCREENS = [
         "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/llanes",
         "dx": 1.8,
         "dy": 1.6
-      },
-      {
-        "id": "palombina",
-        "name": "Playa de Palombina",
-        "cat": "other",
-        "pri": 2,
-        "lat": 43.4186,
-        "lng": -4.7647,
-        "side": "right",
-        "shots": 1,
-        "what": "Городской пляж Llanes: мельче и спокойнее сёрф-спотов, рядом парковка и набережная.",
-        "url": "https://www.llanes.es/es/content/disfruta-playas/playa-de-palombina",
-        "dx": -1.6,
-        "dy": -1.2
       }
     ]
   },
   {
     "kicker": "6 · Астурия",
     "map": "maps/zone-6.jpg?v=96",
-    "west": -6.636,
-    "south": 42.82,
+    "west": -6.396,
+    "south": 42.929,
     "east": -5.131,
-    "north": 44.185,
+    "north": 44.076,
     "cities": [
       {
         "name": "Gijón",
@@ -576,6 +574,18 @@ var ATLAS_SCREENS = [
         "url": "https://www.turismoasturias.es/es/descubre/costa/playas/playa-de-salinas"
       },
       {
+        "id": "silencio",
+        "name": "Playa del Silencio",
+        "cat": "nature",
+        "pri": 2,
+        "lat": 43.566421,
+        "lng": -6.295526,
+        "side": "left",
+        "shots": 1,
+        "what": "Каменная бухта-полумесяц под скалами и островками — один из самых сильных береговых видов западной Астурии.",
+        "url": "https://www.turismoasturias.es/es/descubre/costa/playas/playa-del-silencio-gavieiro"
+      },
+      {
         "id": "cudillero",
         "name": "Cudillero",
         "cat": "town",
@@ -586,18 +596,6 @@ var ATLAS_SCREENS = [
         "shots": 2,
         "what": "Амфитеатр цветных домов над крошечным портом. Самая «открыточная» деревня Астурии.",
         "url": "https://www.turismoasturias.es/descubre/donde-ir/municipios/cudillero"
-      },
-      {
-        "id": "luarca",
-        "name": "Luarca",
-        "cat": "town",
-        "pri": 2,
-        "lat": 43.5447,
-        "lng": -6.5361,
-        "side": "left",
-        "shots": 1,
-        "what": "Белый порт западной Астурии, кладбище на клифе, меньше туристов, чем Cudillero.",
-        "url": "https://www.turismoasturias.es/es/descubre/costa/villas-marineras/marinera-luarca"
       },
       {
         "id": "rodiles",
@@ -656,7 +654,7 @@ var ATLAS_SCREENS = [
   {
     "kicker": "7 · Галисия",
     "map": "maps/zone-7.jpg?v=97",
-    "west": -9.004,
+    "west": -9.311,
     "south": 42.131,
     "east": -8.306,
     "north": 43.466,
@@ -690,6 +688,18 @@ var ATLAS_SCREENS = [
         "shots": 1,
         "what": "Длинный песчаный пляж у Carballo. Правые и левые в зависимости от бара.",
         "url": "https://carballo.gal/razo-parroquia/"
+      },
+      {
+        "id": "cabo_vilan",
+        "name": "Cabo Vilán + Camariñas",
+        "cat": "nature",
+        "pri": 1,
+        "lat": 43.1594,
+        "lng": -9.2108,
+        "side": "left",
+        "shots": 2,
+        "what": "Дикий мыс Costa da Morte: маяк над гранитными скалами, сильный океан и порт Camariñas рядом.",
+        "url": "https://www.turismo.gal/recurso/-/detalle/269616268/cabo-vilan?langId=es_ES"
       },
       {
         "id": "cies",
@@ -745,9 +755,9 @@ var ATLAS_SCREENS = [
     "kicker": "8 · Costa norte",
     "map": "maps/zone-8.jpg?v=98",
     "west": -8.211,
-    "south": 42.957,
-    "east": -6.649,
-    "north": 44.369,
+    "south": 42.832,
+    "east": -6.436,
+    "north": 44.437,
     "cities": [
       {
         "name": "Tapia",
@@ -758,15 +768,15 @@ var ATLAS_SCREENS = [
     "places": [
       {
         "id": "ortegal",
-        "name": "Cabo Ortegal",
+        "name": "Serra da Capelada",
         "cat": "nature",
-        "pri": 2,
-        "lat": 43.7722,
-        "lng": -7.8697,
+        "pri": 1,
+        "lat": 43.7248,
+        "lng": -7.9548,
         "side": "left",
-        "shots": 1,
-        "what": "Мыс, где Бискай встречается с Атлантикой. Одни из самых высоких клифов Европы рядом (Herbeira).",
-        "url": "https://www.spain.info/en/destination/viveiro/"
+        "shots": 2,
+        "what": "Автомобильный маршрут Santo André de Teixido → Vixía Herbeira → Cabo Ortegal: деревня, 600-метровые клифы и…",
+        "url": "https://www.turismo.gal/que-facer/escenarios-ao-volante/25-rutas-insolitas/mar-infinito/de-cedeira-a-cabo-ortegal?langId=en_US"
       },
       {
         "id": "pantin",
@@ -781,6 +791,18 @@ var ATLAS_SCREENS = [
         "url": "https://www.concellodevaldovino.com/"
       },
       {
+        "id": "catedrais",
+        "name": "Praia das Catedrais",
+        "cat": "nature",
+        "pri": 1,
+        "lat": 43.5539,
+        "lng": -7.1572,
+        "side": "left",
+        "shots": 2,
+        "what": "Скальные арки как контрфорсы собора. Видны только в отлив; в прилив пляжа почти нет.",
+        "url": "https://ascatedrais.xunta.gal/"
+      },
+      {
         "id": "tapia",
         "name": "Tapia de Casariego",
         "cat": "surf",
@@ -793,18 +815,6 @@ var ATLAS_SCREENS = [
         "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/tapia-de-casariego"
       },
       {
-        "id": "catedrais",
-        "name": "Praia das Catedrais",
-        "cat": "nature",
-        "pri": 1,
-        "lat": 43.5539,
-        "lng": -7.1572,
-        "side": "right",
-        "shots": 2,
-        "what": "Скальные арки как контрфорсы собора. Видны только в отлив; в прилив пляжа почти нет.",
-        "url": "https://ascatedrais.xunta.gal/"
-      },
-      {
         "id": "frejulfe",
         "name": "Frejulfe",
         "cat": "surf",
@@ -815,6 +825,18 @@ var ATLAS_SCREENS = [
         "shots": 1,
         "what": "Дикий пляж у Navia. Пустее Salinas, волна читаемая для тех, кто уже не новичок.",
         "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/navia"
+      },
+      {
+        "id": "luarca",
+        "name": "Luarca",
+        "cat": "town",
+        "pri": 2,
+        "lat": 43.5447,
+        "lng": -6.5361,
+        "side": "right",
+        "shots": 1,
+        "what": "Белый порт западной Астурии, кладбище на клифе, меньше туристов, чем Cudillero.",
+        "url": "https://www.turismoasturias.es/es/descubre/costa/villas-marineras/marinera-luarca"
       }
     ]
   }
