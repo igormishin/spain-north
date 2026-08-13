@@ -453,7 +453,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   top: 8px;
   left: 8px;
   right: 8px;
-  z-index: 7;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -481,10 +481,10 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
 }
 .atlas-nav button {
   font: inherit;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1;
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   padding: 0;
   border: 0;
   background: rgba(239, 230, 212, 0.92);
@@ -493,6 +493,25 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
 }
 .atlas-nav button:disabled { opacity: 0.35; cursor: default; }
 .atlas-nav .kicker { margin: 0; }
+.atlas-dots {
+  display: flex;
+  gap: 7px;
+  pointer-events: auto;
+  background: rgba(239, 230, 212, 0.88);
+  padding: 6px 8px;
+  border-radius: 2px;
+}
+.atlas-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: 0.22;
+  cursor: pointer;
+}
+.atlas-dots button.is-on { opacity: 1; }
 .atlas-shots.n0 { background: #d4c7ae; }
 .atlas-legend {
   display: flex;
@@ -651,6 +670,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
         <p class="kicker" id="atlas-kicker">1 · BIO → Zarautz</p>
         <button type="button" id="atlas-next" aria-label="Следующий экран">→</button>
       </div>
+      <div class="atlas-dots" id="atlas-dots"></div>
       <p class="atlas-legend">
         <span><i class="cat-surf" style="background:var(--surf)"></i>сёрф</span>
         <span><i class="cat-nature" style="background:var(--nature)"></i>природа</span>
@@ -2010,7 +2030,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
 </section>
 <footer class="foot">Срез 12 авг 2026. Авиасейлс (часто с багажом) и Google Flights (часто без). Open-jaw: TLL→BIO / MAD→TLL или наоборот, если маршрут линейный.</footer>
 </div>
-<script src="atlas-screens.js"></script>
+<script src="atlas-screens.js?v=7"></script>
 <script>
 (function () {
   var ids = ["overview", "atlas", "places", "stay", "fly"];
@@ -2037,9 +2057,12 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   }
 
   var ATLAS_CAT = { surf: "Сёрф", nature: "Природа", town: "Город", other: "Другое" };
+  var ATLAS_PHOTO_V = "7";
   var ATLAS = ATLAS_SCREENS[0];
   var atlasI = 0;
   var atlasBound = false;
+  var atlasWheelAt = 0;
+  var atlasTouchX = 0;
 
   function atlasMercY(lat) {
     var r = lat * Math.PI / 180;
@@ -2055,7 +2078,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   function atlasCard(p) {
     var n = p.shots || 0;
     var imgs = "";
-    for (var i = 1; i <= n; i++) imgs += '<img src="photos/' + p.id + '/' + i + '.jpg" alt="' + p.name + '">';
+    for (var i = 1; i <= n; i++) imgs += '<img src="photos/' + p.id + '/' + i + '.jpg?v=' + ATLAS_PHOTO_V + '" alt="' + p.name + '">';
     var shots = '<div class="atlas-shots n' + n + '">' + imgs + "</div>";
     var body = '<div><p class="meta"><span class="p">P' + p.pri + "</span> " + ATLAS_CAT[p.cat] + "</p><h3>" + p.name + "</h3><p>" + p.what + "</p></div>";
     var inner = p.side === "left" ? shots + body : body + shots;
@@ -2063,21 +2086,53 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   }
   function atlasBind() {
     if (atlasBound) return;
+    var root = document.getElementById("atlas");
     document.getElementById("atlas-prev").addEventListener("click", function () { atlasGo(-1); });
     document.getElementById("atlas-next").addEventListener("click", function () { atlasGo(1); });
+    document.getElementById("atlas-dots").addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-i]");
+      if (btn) atlasTo(parseInt(btn.getAttribute("data-i"), 10));
+    });
     window.addEventListener("resize", atlasRefresh);
     document.getElementById("atlas-map").addEventListener("load", atlasRefresh);
     document.addEventListener("keydown", function (e) {
       if (document.getElementById("panel-atlas").hidden) return;
-      if (e.key === "ArrowLeft") atlasGo(-1);
-      if (e.key === "ArrowRight") atlasGo(1);
+      if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); atlasGo(-1); }
+      if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); atlasGo(1); }
     });
+    root.addEventListener("wheel", function (e) {
+      if (document.getElementById("panel-atlas").hidden) return;
+      var dy = e.deltaY, dx = e.deltaX;
+      if (Math.abs(dy) < 30 && Math.abs(dx) < 30) return;
+      e.preventDefault();
+      var now = Date.now();
+      if (now - atlasWheelAt < 650) return;
+      atlasWheelAt = now;
+      atlasGo((dy > 0 || dx > 0) ? 1 : -1);
+    }, { passive: false });
+    root.addEventListener("touchstart", function (e) {
+      atlasTouchX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    root.addEventListener("touchend", function (e) {
+      var dx = e.changedTouches[0].clientX - atlasTouchX;
+      if (Math.abs(dx) > 50) atlasGo(dx < 0 ? 1 : -1);
+    }, { passive: true });
     atlasBound = true;
   }
+  function atlasHash(i) {
+    return i === 0 ? "atlas" : "atlas/" + (i + 1);
+  }
+  function atlasTo(i) {
+    if (i < 0 || i >= ATLAS_SCREENS.length) return;
+    var h = atlasHash(i);
+    if ((location.hash || "").replace(/^#/, "") === h) {
+      atlasShow(i);
+      return;
+    }
+    location.hash = h;
+  }
   function atlasGo(d) {
-    var n = atlasI + d;
-    if (n < 0 || n >= ATLAS_SCREENS.length) return;
-    location.hash = n === 0 ? "atlas" : "atlas/" + (n + 1);
+    atlasTo(atlasI + d);
   }
   function atlasShow(i) {
     atlasBind();
@@ -2089,12 +2144,16 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     var right = document.getElementById("atlas-right");
     var wrap = document.getElementById("atlas-map-wrap");
     var map = document.getElementById("atlas-map");
+    var dots = document.getElementById("atlas-dots");
     left.innerHTML = "";
     right.innerHTML = "";
     wrap.querySelectorAll(".atlas-dot, .atlas-city").forEach(function (el) { el.remove(); });
     document.getElementById("atlas-kicker").textContent = ATLAS.kicker;
     document.getElementById("atlas-prev").disabled = i === 0;
     document.getElementById("atlas-next").disabled = i === ATLAS_SCREENS.length - 1;
+    dots.innerHTML = ATLAS_SCREENS.map(function (_, n) {
+      return '<button type="button" data-i="' + n + '" class="' + (n === i ? "is-on" : "") + '" aria-label="Экран ' + (n + 1) + '"></button>';
+    }).join("");
     map.alt = ATLAS.kicker;
     if (map.getAttribute("src") !== ATLAS.map) map.src = ATLAS.map;
     ATLAS.places.forEach(function (p) {
