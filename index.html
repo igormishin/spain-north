@@ -662,12 +662,12 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
   <div class="atlas-col" id="atlas-left"></div>
   <div class="atlas-stage" id="atlas-stage">
     <div class="atlas-map-wrap" id="atlas-map-wrap">
-      <img class="atlas-map" id="atlas-map" src="maps/zone-1.jpg?v=5" alt="Западные Баски, карта">
+      <img class="atlas-map" id="atlas-map" src="maps/zone-1.jpg?v=81" alt="Западные Баски, карта">
     </div>
     <div class="atlas-head">
       <div class="atlas-nav">
         <button type="button" id="atlas-prev" aria-label="Предыдущий экран">←</button>
-        <p class="kicker" id="atlas-kicker">1 · BIO → Zarautz</p>
+        <p class="kicker" id="atlas-kicker">1 · BIO · Santander</p>
         <button type="button" id="atlas-next" aria-label="Следующий экран">→</button>
       </div>
       <div class="atlas-dots" id="atlas-dots"></div>
@@ -2030,7 +2030,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
 </section>
 <footer class="foot">Срез 12 авг 2026. Авиасейлс (часто с багажом) и Google Flights (часто без). Open-jaw: TLL→BIO / MAD→TLL или наоборот, если маршрут линейный.</footer>
 </div>
-<script src="atlas-screens.js?v=7"></script>
+<script src="atlas-screens.js?v=8"></script>
 <script>
 (function () {
   var ids = ["overview", "atlas", "places", "stay", "fly"];
@@ -2082,7 +2082,7 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
     var shots = '<div class="atlas-shots n' + n + '">' + imgs + "</div>";
     var body = '<div><p class="meta"><span class="p">P' + p.pri + "</span> " + ATLAS_CAT[p.cat] + "</p><h3>" + p.name + "</h3><p>" + p.what + "</p></div>";
     var inner = p.side === "left" ? shots + body : body + shots;
-    return '<article class="atlas-card cat-' + p.cat + '" data-id="' + p.id + '" data-side="' + p.side + '">' + inner + "</article>";
+    return '<article class="atlas-card cat-' + p.cat + '" data-id="' + p.id + '" data-side="' + p.side + '" data-url="' + (p.url || "") + '" title="Открыть описание">' + inner + "</article>";
   }
   function atlasBind() {
     if (atlasBound) return;
@@ -2164,6 +2164,8 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
       dot.id = "pin-" + p.id;
       dot.className = "atlas-dot cat-" + p.cat;
       dot.setAttribute("data-id", p.id);
+      if (p.url) dot.setAttribute("data-url", p.url);
+      dot.setAttribute("title", "Открыть описание");
       dot.style.left = (pos.x + (p.dx || 0)) + "%";
       dot.style.top = (pos.y + (p.dy || 0)) + "%";
       dot.setAttribute("aria-label", p.name);
@@ -2188,6 +2190,10 @@ td.fare { font-family: Fraunces, serif; font-size: 15px; white-space: nowrap; }
       var id = el.getAttribute("data-id");
       el.addEventListener("mouseenter", function () { hi(id, true); });
       el.addEventListener("mouseleave", function () { hi(id, false); });
+      el.addEventListener("click", function () {
+        var url = el.getAttribute("data-url");
+        if (url) window.open(url, "_blank", "noopener,noreferrer");
+      });
     });
     atlasRefresh();
   }
