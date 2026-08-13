@@ -41,7 +41,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 1,
         "what": "Сосед Somo за мысом. Короче, чуть мощнее, у El Brusco есть рифовый кусок для среднего+.",
-        "url": "https://es.wikipedia.org/wiki/Loredo",
+        "url": "https://www.turicantabria.com/playas-somo-loredo/",
         "dx": 1.6,
         "dy": -1.2
       },
@@ -55,7 +55,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 2,
         "what": "2 км песчаного брейка напротив Santander. Самый мягкий и «школьный» спот всего берега.",
-        "url": "https://es.wikipedia.org/wiki/Somo_(Cantabria)",
+        "url": "https://www.descubrecantabria.info/4-cosas-que-hacer-en-somo/playa-de-somo/",
         "dx": -1.4,
         "dy": 1.4
       },
@@ -69,7 +69,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 2,
         "what": "Бывший карьер: слоны, медведи, жирафы в больших вольерах, ездят на машине между зонами. 15–20 мин от…",
-        "url": "https://en.wikipedia.org/wiki/Cab%C3%A1rceno_Natural_Park"
+        "url": "https://www.parquecabarceno.com/"
       },
       {
         "id": "gaztelugatxe",
@@ -81,7 +81,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 2,
         "what": "Скала-остров с часовней, каменный мост, ~240 ступеней. Вид с берега уже сильный.",
-        "url": "https://en.wikipedia.org/wiki/San_Juan_de_Gaztelugatxe"
+        "url": "https://www.visitbiscay.eus/en/san-juan-gaztelugatxe"
       },
       {
         "id": "mundaka",
@@ -93,7 +93,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Знаменитый левый в устье. Для среднего уровня в воду не лезть: труба, локалы, риф/канал.",
-        "url": "https://en.wikipedia.org/wiki/Mundaka"
+        "url": "https://www.visitbiscay.eus/en/old-town-and-port-of-bermeo"
       },
       {
         "id": "sopelana",
@@ -105,7 +105,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 2,
         "what": "Рабочая лошадка баскского берега у Бильбао. Несколько пиков: Arrietara, La Salvaje.",
-        "url": "https://en.wikipedia.org/wiki/Sopela"
+        "url": "https://turismo.sopela.eus/en/"
       },
       {
         "id": "lekeitio",
@@ -117,7 +117,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Порт и остров San Nicolás: в отлив можно пройти по косе.",
-        "url": "https://en.wikipedia.org/wiki/Lekeitio"
+        "url": "https://www.visitbiscay.eus/en/historic-centre-of-lekeitio"
       },
       {
         "id": "guggenheim",
@@ -174,7 +174,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 2,
         "what": "Мыс-мышь, гриль рыбы на улице, txakoli, Balenciaga родился здесь. 10 мин от Zarautz.",
-        "url": "https://en.wikipedia.org/wiki/Getaria,_Spain"
+        "url": "https://www.spain.info/en/destination/getaria/"
       },
       {
         "id": "flysch",
@@ -186,7 +186,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 2,
         "what": "Слоистые скалы геопарка: миллионы лет в разрезе. Пляж Itzurun + клифы к Deba.",
-        "url": "https://en.wikipedia.org/wiki/Basque_Coast_Geopark"
+        "url": "https://geoparkea.eus/en/"
       },
       {
         "id": "zarautz",
@@ -198,7 +198,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 2,
         "what": "2,5 км песка, максимум школ и проката на всём берегу. Город сразу за набережной.",
-        "url": "https://en.wikipedia.org/wiki/Zarautz"
+        "url": "https://www.spain.info/en/destination/zarautz/"
       },
       {
         "id": "hondarribia",
@@ -210,7 +210,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Стены старого города + цветной рыбацкий квартал. Граница с Францией через устье.",
-        "url": "https://en.wikipedia.org/wiki/Hondarribia"
+        "url": "https://www.hondarribiaturismo.com/"
       },
       {
         "id": "zurriola",
@@ -222,7 +222,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Городской сёрф-пляж Сан-Себастьяна. Школы на променаде. Gros — барный район сразу за пляжем.",
-        "url": "https://es.wikipedia.org/wiki/Playa_de_Zurriola",
+        "url": "https://www.sansebastianturismoa.eus/en/to-do/beaches/zurriola",
         "dx": 2.2,
         "dy": -1.2
       },
@@ -236,7 +236,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Одна улица рыбацких домов, крошечный паром через устье. 15 мин от Donostia.",
-        "url": "https://en.wikipedia.org/wiki/Pasaia"
+        "url": "https://www.sansebastianturismoa.eus/en/to-do/what-to-see/pasaia"
       },
       {
         "id": "donostia",
@@ -248,7 +248,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 2,
         "what": "Уже город, но компактный: Concha, Parte Vieja, pintxos, Zurriola. Имеет смысл как база, не как галочка.",
-        "url": "https://en.wikipedia.org/wiki/San_Sebasti%C3%A1n",
+        "url": "https://www.spain.info/en/destination/san-sebastian/",
         "dx": 0.0,
         "dy": 2.6
       },
@@ -262,7 +262,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 2,
         "what": "Полукруглая городская бухта Donostia. Самый спокойный заход в воду на баскском берегу.",
-        "url": "https://es.wikipedia.org/wiki/Playa_de_la_Concha_(San_Sebasti%C3%A1n)",
+        "url": "https://www.sansebastianturismoa.eus/en/to-do/beaches/la-concha",
         "dx": -2.2,
         "dy": 1.4
       }
@@ -309,7 +309,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 2,
         "what": "Ледниковые озёра Enol и Ercina в Picos de Europa. Главный природный «вау» Астурии без тяжёлого трека.",
-        "url": "https://en.wikipedia.org/wiki/Lakes_of_Covadonga"
+        "url": "https://www.turismocangasdeonis.com/lagos-de-covadonga.html"
       },
       {
         "id": "fuente_de",
@@ -321,7 +321,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 1,
         "what": "Кабелькар на плато Picos: набор высоты без ходьбы. Вид, короткий выход наверху.",
-        "url": "https://en.wikipedia.org/wiki/Fuente_D%C3%A9"
+        "url": "https://www.picosdeeuropa.com/fuente-de/"
       },
       {
         "id": "liencres",
@@ -333,7 +333,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Самые большие дюны кантабрийского берега, сосны, длинный пляж.",
-        "url": "https://es.wikipedia.org/wiki/Parque_natural_de_las_Dunas_de_Liencres"
+        "url": "https://www.spain.info/en/destination/santander/"
       },
       {
         "id": "oyambre",
@@ -345,7 +345,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Пляж в природном парке между Comillas и San Vicente. Дюны, эстуарий, вид на Picos.",
-        "url": "https://es.wikipedia.org/wiki/Parque_natural_de_Oyambre"
+        "url": "https://turismo.sanvicentedelabarquera.es/"
       },
       {
         "id": "santillana",
@@ -357,7 +357,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Средневековый камень, очень туристический. Рядом музей Альтамиры.",
-        "url": "https://en.wikipedia.org/wiki/Santillana_del_Mar"
+        "url": "https://www.spain.info/en/destination/santillana-del-mar/"
       },
       {
         "id": "comillas",
@@ -369,7 +369,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Курорт indianos: El Capricho Гауди, дворец Sobrellano, пляж.",
-        "url": "https://en.wikipedia.org/wiki/Comillas"
+        "url": "https://www.spain.info/en/destination/comillas/"
       },
       {
         "id": "san_vicente",
@@ -381,7 +381,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 2,
         "what": "Эстуарий, замок, мосты, Picos на фоне. Море + горы в одном кадре.",
-        "url": "https://en.wikipedia.org/wiki/San_Vicente_de_la_Barquera"
+        "url": "https://turismo.sanvicentedelabarquera.es/"
       },
       {
         "id": "altamira",
@@ -393,7 +393,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Реплика пещеры с бизонами + музей. Оригинал почти закрыт.",
-        "url": "https://en.wikipedia.org/wiki/Cave_of_Altamira"
+        "url": "https://www.cultura.gob.es/mnaltamira/en/home.html"
       }
     ]
   },
@@ -427,7 +427,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 1,
         "what": "Устье Sella, пляж Santa Marina, нормальный городок а не только открытка. Хорошая база восточной Астурии.",
-        "url": "https://en.wikipedia.org/wiki/Ribadesella"
+        "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/ribadesella"
       },
       {
         "id": "cuevona",
@@ -439,7 +439,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 1,
         "what": "Дорога в деревню Cuevas del Agua идёт через огромную пещеру.",
-        "url": "https://es.wikipedia.org/wiki/La_Cuevona"
+        "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/ribadesella"
       },
       {
         "id": "gulpiyuri",
@@ -451,7 +451,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Крошечный пляж в воронке в 100 м от моря: вода приходит под землёй.",
-        "url": "https://es.wikipedia.org/wiki/Playa_de_Gulpiyuri"
+        "url": "https://www.turismoasturias.es/es/descubre/naturaleza/espacios-protegidos/playa-de-gulpiyuri"
       },
       {
         "id": "bufones",
@@ -463,7 +463,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 2,
         "what": "Карстовые продухи в клифе: при волне бьют фонтаны. Короткий выход у Llames, рядом с San Antolín.",
-        "url": "https://es.wikipedia.org/wiki/Bufones_de_Pr%C3%ADa"
+        "url": "https://www.turismoasturias.es/es/descubre/naturaleza/otros-espacios/bufones/bufones-de-pria"
       },
       {
         "id": "san_antolin",
@@ -475,7 +475,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Широкий пляж у Llanes. Школа прямо на песке с 1998 (Llanes Surf Paradise): прокат, душ, парковка.",
-        "url": "https://es.wikipedia.org/wiki/Playa_de_San_Antol%C3%ADn"
+        "url": "https://www.turismoasturias.es/es/descubre/costa/playas/playa-de-san-antolin"
       },
       {
         "id": "torimbia",
@@ -487,7 +487,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Одна из самых красивых бухт восточной Астурии. Спуск пешком от Niembro.",
-        "url": "https://es.wikipedia.org/wiki/Playa_de_Torimbia"
+        "url": "https://www.llanes.es/es/content/disfruta-playas/playa-de-torimbia"
       },
       {
         "id": "llanes",
@@ -499,7 +499,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 2,
         "what": "Стенки старого города, несколько городских пляжей, еда, рядом сёрф и клифы.",
-        "url": "https://en.wikipedia.org/wiki/Llanes",
+        "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/llanes",
         "dx": 1.8,
         "dy": 1.6
       },
@@ -513,7 +513,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Городской пляж Llanes: мельче и спокойнее сёрф-спотов, рядом парковка и набережная.",
-        "url": "https://es.wikipedia.org/wiki/Playa_de_Palombina",
+        "url": "https://www.llanes.es/es/content/disfruta-playas/playa-de-palombina",
         "dx": -1.6,
         "dy": -1.2
       }
@@ -560,7 +560,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 2,
         "what": "Большая полулунная бухта, песок, работает часто. 10 минут от аэропорта Овьедо (OVD).",
-        "url": "https://es.wikipedia.org/wiki/Playa_de_Salinas"
+        "url": "https://www.turismoasturias.es/es/descubre/costa/playas/playa-de-salinas"
       },
       {
         "id": "cudillero",
@@ -572,7 +572,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 2,
         "what": "Амфитеатр цветных домов над крошечным портом. Самая «открыточная» деревня Астурии.",
-        "url": "https://en.wikipedia.org/wiki/Cudillero"
+        "url": "https://www.turismoasturias.es/descubre/donde-ir/municipios/cudillero"
       },
       {
         "id": "luarca",
@@ -584,7 +584,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 1,
         "what": "Белый порт западной Астурии, кладбище на клифе, меньше туристов, чем Cudillero.",
-        "url": "https://en.wikipedia.org/wiki/Luarca"
+        "url": "https://www.turismoasturias.es/es/descubre/costa/villas-marineras/marinera-luarca"
       },
       {
         "id": "penas",
@@ -596,7 +596,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Самая северная точка Астурии, маяк, клифы.",
-        "url": "https://es.wikipedia.org/wiki/Cabo_de_Pe%C3%B1as"
+        "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/gozon"
       },
       {
         "id": "rodiles",
@@ -608,7 +608,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Устье у Villaviciosa. Качественный левый, один из лучших в Астурии, когда работает.",
-        "url": "https://es.wikipedia.org/wiki/Playa_de_Rodiles"
+        "url": "https://www.turismoasturias.es/es/descubre/costa/playas/playa-de-rodiles"
       },
       {
         "id": "lastres",
@@ -620,7 +620,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Деревня на склоне, вид на море и Picos. Рядом пляж La Griega (следы динозавров).",
-        "url": "https://en.wikipedia.org/wiki/Lastres",
+        "url": "https://www.turismoasturias.es/es/descubre/costa/villas-marineras/marinera-lastres",
         "dx": 1.4,
         "dy": -1.2
       },
@@ -634,7 +634,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Пляж у Colunga со следами динозавров на плите.",
-        "url": "https://es.wikipedia.org/wiki/Playa_de_La_Griega",
+        "url": "https://www.turismoasturias.es/es/descubre/costa/playas/playa-de-la-griega",
         "dx": -1.2,
         "dy": 1.4
       },
@@ -693,7 +693,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 1,
         "what": "Мыс, где Бискай встречается с Атлантикой. Одни из самых высоких клифов Европы рядом (Herbeira).",
-        "url": "https://en.wikipedia.org/wiki/Cape_Ortegal"
+        "url": "https://www.spain.info/en/destination/viveiro/"
       },
       {
         "id": "pantin",
@@ -705,7 +705,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 2,
         "what": "Главный сёрф-пляж северной Галисии. Длинная дуга, песчаный брейк, здесь проходит Pantín Classic.",
-        "url": "https://es.wikipedia.org/wiki/Pant%C3%ADn_(Valdovi%C3%B1o)"
+        "url": "https://www.concellodevaldovino.com/"
       },
       {
         "id": "hercules",
@@ -717,7 +717,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 1,
         "what": "Римский маяк, всё ещё работает. A Coruña.",
-        "url": "https://en.wikipedia.org/wiki/Tower_of_Hercules"
+        "url": "https://turismocoruna.com/en/torre-de-hercules/"
       },
       {
         "id": "razo",
@@ -729,7 +729,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 1,
         "what": "Длинный песчаный пляж у Carballo. Правые и левые в зависимости от бара.",
-        "url": "https://gl.wikipedia.org/wiki/Praia_de_Razo"
+        "url": "https://carballo.gal/razo-parroquia/"
       },
       {
         "id": "santiago",
@@ -741,7 +741,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 1,
         "what": "Собор и старый город. Имеет смысл, если прилёт SCQ, не как цель береговой поездки.",
-        "url": "https://en.wikipedia.org/wiki/Santiago_de_Compostela"
+        "url": "https://www.spain.info/en/destination/santiago-compostela/"
       },
       {
         "id": "combarro",
@@ -753,7 +753,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 1,
         "what": "Рыбацкий посёлок в Rías Baixas: каменные hórreos прямо у воды.",
-        "url": "https://es.wikipedia.org/wiki/Combarro"
+        "url": "https://www.spain.info/en/destination/combarro/"
       },
       {
         "id": "cies",
@@ -765,7 +765,7 @@ var ATLAS_SCREENS = [
         "side": "left",
         "shots": 2,
         "what": "Острова нацпарка у Vigo. Белая дуга Praia de Rodas, сосны, тропы без машин.",
-        "url": "https://en.wikipedia.org/wiki/C%C3%ADes_Islands"
+        "url": "https://illasatlanticas.gal/es/visita-el-parque/visita-cies"
       },
       {
         "id": "tapia",
@@ -777,7 +777,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Западная Астурия, граница с Галисией. Несколько пляжей вокруг посёлка, школы на месте.",
-        "url": "https://en.wikipedia.org/wiki/Tapia_de_Casariego"
+        "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/tapia-de-casariego"
       },
       {
         "id": "catedrais",
@@ -789,7 +789,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 2,
         "what": "Скальные арки как контрфорсы собора. Видны только в отлив; в прилив пляжа почти нет.",
-        "url": "https://en.wikipedia.org/wiki/As_Catedrais_beach"
+        "url": "https://ascatedrais.xunta.gal/"
       },
       {
         "id": "frejulfe",
@@ -801,7 +801,7 @@ var ATLAS_SCREENS = [
         "side": "right",
         "shots": 1,
         "what": "Дикий пляж у Navia. Пустее Salinas, волна читаемая для тех, кто уже не новичок.",
-        "url": "https://es.wikipedia.org/wiki/Playa_de_Frejulfe"
+        "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/navia"
       }
     ]
   }
