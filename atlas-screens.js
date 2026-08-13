@@ -38,7 +38,7 @@ var ATLAS_SCREENS = [
         "lat": 43.4472,
         "lng": -2.785,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Скала-остров с часовней, каменный мост, ~240 ступеней. Вид с берега уже сильный.",
         "url": "https://www.visitbiscay.eus/en/san-juan-gaztelugatxe"
       },
@@ -50,7 +50,7 @@ var ATLAS_SCREENS = [
         "lat": 43.3872,
         "lng": -2.9958,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Рабочая лошадка баскского берега у Бильбао. Несколько пиков: Arrietara, La Salvaje.",
         "url": "https://turismo.sopela.eus/en/"
       },
@@ -74,7 +74,7 @@ var ATLAS_SCREENS = [
         "lat": 43.4105,
         "lng": -2.6826,
         "side": "right",
-        "shots": 2,
+        "shots": 1,
         "what": "Эстуарий биосферного резервата, спокойный песок Laida и панорама болот, острова Izaro и Mundaka.",
         "url": "https://turismo.euskadi.eus/en/blog/essential-things-to-do-in-the-urdaibai-biosphere-reserve/webtur00-contfichapost/en/"
       },
@@ -133,7 +133,7 @@ var ATLAS_SCREENS = [
         "lat": 43.3178,
         "lng": -1.9864,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Полукруглая городская бухта Donostia. Самый спокойный заход в воду на баскском берегу.",
         "url": "https://www.sansebastianturismoa.eus/en/to-do/beaches/la-concha",
         "dx": -2.2,
@@ -147,7 +147,7 @@ var ATLAS_SCREENS = [
         "lat": 43.3044,
         "lng": -2.2036,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Мыс-мышь, гриль рыбы на улице, txakoli, Balenciaga родился здесь. 10 мин от Zarautz.",
         "url": "https://www.spain.info/en/destination/getaria/"
       },
@@ -159,7 +159,7 @@ var ATLAS_SCREENS = [
         "lat": 43.3008,
         "lng": -2.2592,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Слоистые скалы геопарка: миллионы лет в разрезе. Пляж Itzurun + клифы к Deba.",
         "url": "https://geoparkea.eus/en/"
       },
@@ -171,7 +171,7 @@ var ATLAS_SCREENS = [
         "lat": 43.2894,
         "lng": -2.1697,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "2,5 км песка, максимум школ и проката на всём берегу. Город сразу за набережной.",
         "url": "https://www.spain.info/en/destination/zarautz/"
       },
@@ -221,7 +221,7 @@ var ATLAS_SCREENS = [
         "lat": 43.3228,
         "lng": -1.9839,
         "side": "right",
-        "shots": 2,
+        "shots": 1,
         "what": "Уже город, но компактный: Concha, Parte Vieja, pintxos, Zurriola. Имеет смысл как база, не как галочка.",
         "url": "https://www.spain.info/en/destination/san-sebastian/",
         "dx": 0.0,
@@ -303,7 +303,7 @@ var ATLAS_SCREENS = [
         "lat": 43.4414,
         "lng": -3.7469,
         "side": "right",
-        "shots": 2,
+        "shots": 1,
         "what": "2 км песчаного брейка напротив Santander. Самый мягкий и «школьный» спот всего берега.",
         "url": "https://www.descubrecantabria.info/4-cosas-que-hacer-en-somo/playa-de-somo/",
         "dx": -1.4,
@@ -317,7 +317,7 @@ var ATLAS_SCREENS = [
         "lat": 43.3542,
         "lng": -3.8431,
         "side": "right",
-        "shots": 2,
+        "shots": 1,
         "what": "Бывший карьер: слоны, медведи, жирафы в больших вольерах, ездят на машине между зонами. 15–20 мин от…",
         "url": "https://www.parquecabarceno.com/"
       }
@@ -356,7 +356,7 @@ var ATLAS_SCREENS = [
         "lat": 43.2951,
         "lng": -4.4314,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Пещера с необычными кристаллами и горными галереями; к началу маршрута везёт маленький шахтный поезд.",
         "url": "https://www.elsoplao.es/es/informacion-visita/preguntas-frecuentes"
       },
@@ -368,7 +368,7 @@ var ATLAS_SCREENS = [
         "lat": 43.2725,
         "lng": -4.9917,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Ледниковые озёра Enol и Ercina в Picos de Europa. Главный природный «вау» Астурии без тяжёлого трека.",
         "url": "https://www.turismocangasdeonis.com/lagos-de-covadonga.html"
       },
@@ -416,7 +416,7 @@ var ATLAS_SCREENS = [
         "lat": 43.385,
         "lng": -4.3994,
         "side": "right",
-        "shots": 2,
+        "shots": 1,
         "what": "Эстуарий, замок, мосты, Picos на фоне. Море + горы в одном кадре.",
         "url": "https://turismo.sanvicentedelabarquera.es/"
       }
@@ -486,7 +486,7 @@ var ATLAS_SCREENS = [
         "lat": 43.4478,
         "lng": -4.8503,
         "side": "right",
-        "shots": 2,
+        "shots": 1,
         "what": "Карстовые продухи в клифе: при волне бьют фонтаны. Короткий выход у Llames, рядом с San Antolín.",
         "url": "https://www.turismoasturias.es/es/descubre/naturaleza/otros-espacios/bufones/bufones-de-pria"
       },
@@ -510,7 +510,7 @@ var ATLAS_SCREENS = [
         "lat": 43.4211,
         "lng": -4.7542,
         "side": "right",
-        "shots": 2,
+        "shots": 1,
         "what": "Стенки старого города, несколько городских пляжей, еда, рядом сёрф и клифы.",
         "url": "https://www.turismoasturias.es/es/descubre/donde-ir/municipios/llanes",
         "dx": 1.8,
@@ -569,7 +569,7 @@ var ATLAS_SCREENS = [
         "lat": 43.5892,
         "lng": -5.9583,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Большая полулунная бухта, песок, работает часто. 10 минут от аэропорта Овьедо (OVD).",
         "url": "https://www.turismoasturias.es/es/descubre/costa/playas/playa-de-salinas"
       },
@@ -593,7 +593,7 @@ var ATLAS_SCREENS = [
         "lat": 43.5633,
         "lng": -6.1458,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Амфитеатр цветных домов над крошечным портом. Самая «открыточная» деревня Астурии.",
         "url": "https://www.turismoasturias.es/descubre/donde-ir/municipios/cudillero"
       },
@@ -697,7 +697,7 @@ var ATLAS_SCREENS = [
         "lat": 43.1594,
         "lng": -9.2108,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Дикий мыс Costa da Morte: маяк над гранитными скалами, сильный океан и порт Camariñas рядом.",
         "url": "https://www.turismo.gal/recurso/-/detalle/269616268/cabo-vilan?langId=es_ES"
       },
@@ -709,7 +709,7 @@ var ATLAS_SCREENS = [
         "lat": 42.2114,
         "lng": -8.9036,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Острова нацпарка у Vigo. Белая дуга Praia de Rodas, сосны, тропы без машин.",
         "url": "https://illasatlanticas.gal/es/visita-el-parque/visita-cies"
       },
@@ -774,7 +774,7 @@ var ATLAS_SCREENS = [
         "lat": 43.7248,
         "lng": -7.9548,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Автомобильный маршрут Santo André de Teixido → Vixía Herbeira → Cabo Ortegal: деревня, 600-метровые клифы и…",
         "url": "https://www.turismo.gal/que-facer/escenarios-ao-volante/25-rutas-insolitas/mar-infinito/de-cedeira-a-cabo-ortegal?langId=en_US"
       },
@@ -786,7 +786,7 @@ var ATLAS_SCREENS = [
         "lat": 43.6417,
         "lng": -8.1108,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Главный сёрф-пляж северной Галисии. Длинная дуга, песчаный брейк, здесь проходит Pantín Classic.",
         "url": "https://www.concellodevaldovino.com/"
       },
@@ -798,7 +798,7 @@ var ATLAS_SCREENS = [
         "lat": 43.5539,
         "lng": -7.1572,
         "side": "left",
-        "shots": 2,
+        "shots": 1,
         "what": "Скальные арки как контрфорсы собора. Видны только в отлив; в прилив пляжа почти нет.",
         "url": "https://ascatedrais.xunta.gal/"
       },
